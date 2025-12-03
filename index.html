@@ -30,9 +30,9 @@
             background-image: var(--texture-url);
             color: var(--dark-text);
             min-height: 100vh;
+            font-size: 0.95em; /* Slight overall text size reduction */
         }
 
-        /* FIX: Ensure content containers are centered */
         .container {
             width: 90%; 
             max-width: 1200px;
@@ -41,21 +41,21 @@
             padding: 20px 0;
         }
         
-        /* FIX 2: Increased Section Padding and Centered Block */
+        /* FIX: Increased space within the white container and aligned content */
         section {
-            padding: 40px 40px; /* Generous padding around all content */
-            margin: 30px auto; /* Centers the whole white section block */
+            padding: 40px 60px; /* Increased horizontal padding (60px) */
+            margin: 30px auto;
             background-color: rgba(255, 255, 255, 0.98); 
             border-radius: 12px;
             box-shadow: var(--card-shadow);
             max-width: 1200px;
         }
         
-        /* FIX 1: Left-align main headings */
         h2 {
             text-align: left !important;
+            margin-bottom: 25px; /* Added space below main headings */
         }
-
+        
         /* HEADER STYLING */
         header {
             background: var(--dark-header);
@@ -64,8 +64,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
-        
-        /* NAVIGATION */
+
         nav {
             background: #2c3e50;
             text-align: center;
@@ -86,7 +85,7 @@
             background: #ffffff;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: calc(50% - 10px); /* 2 cards per row on desktop */
+            width: calc(50% - 10px); 
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #ddd;
             overflow: hidden;
@@ -112,7 +111,7 @@
         }
 
         .card-content {
-            padding: 0 20px 20px 20px; /* Padding for inner content */
+            padding: 0 20px 20px 20px; 
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -144,15 +143,15 @@
         /* RESPONSIVENESS */
         @media (max-width: 650px) {
             .pricing-card {
-                width: 100%; /* 1 card per row on mobile */
+                width: 100%; 
                 min-width: unset;
             }
             .contact-shortcuts {
                 flex-direction: column;
                 align-items: flex-start;
             }
-             section {
-                padding: 20px 15px; /* Reduced section padding for smaller screens */
+            section {
+                padding: 20px 15px; /* Reduce padding significantly on mobile */
             }
         }
     </style>
@@ -289,68 +288,4 @@
             
             <div class="pricing-card">
                 <div class="card-header-highlight">
-                    <h3><i class="fa-solid fa-desktop"></i> Intel i7 Desktop PC</h3>
-                </div>
-                <div class="card-content">
-                    <div>
-                        <p><strong>RAM:</strong> 16 GB</p>
-                        <p><strong>Storage:</strong> 512 GB SSD</p>
-                    </div>
-                    <div class="price-box">₹2300 / month</div>
-                </div>
-            </div>
-
-        </div>
-        
-        <div class="disclaimer">
-            <p><strong>Customised PCs:</strong> We can also provide tailored PCs based on your specific requirements.</p>
-            <p class="bulk-note"><strong>Bulk Orders:</strong> Price is negotiable for bulk orders. Please contact us for a quote.</p>
-        </div>
-    </section>
-
-    <section id="story" class="container">
-        <h2>Our Story</h2>
-        <p>Founded with a vision to make quality technology accessible to businesses of all sizes, Rent My Tech has become Kolkata's trusted partner for professional tech rental solutions.</p>
-        <p>We understand that businesses need reliable technology without the burden of large capital investments. Whether you're a startup scaling rapidly, an established company with temporary projects, or an enterprise needing additional capacity, we provide the right technology solutions.</p>
-        <p>Our commitment to quality, service excellence, and customer satisfaction has made us the preferred choice for hundreds of companies across Kolkata and surrounding areas.</p>
-    </section>
-
-    <section id="contact" class="container">
-        <h2>Get In Touch</h2>
-
-        <div class="contact-shortcuts">
-            <a href="https://t.me/rentmytechin" target="_blank" class="telegram-link">
-                <i class="fa-brands fa-telegram"></i> Join Telegram
-            </a>
-            
-            <a href="https://wa.me/916291666200" target="_blank" class="whatsapp-link">
-                <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
-            </a>
-
-            <a href="tel:+916291666200" class="phone-link">
-                <i class="fa-solid fa-phone"></i> Call Us Now
-            </a>
-        </div>
-
-        <div class="contact-details">
-            <h3>Contact Details:</h3>
-            <p><strong>Email:</strong> <a href="mailto:support@rentmytech.in">support@rentmytech.in</a></p>
-            <p><strong>Phone:</strong> <a href="tel:+916291666200">6291 666 200</a></p>
-            
-            <h3>Office Address:</h3>
-            <p>
-                Hasina More, Dr. M.N.Ghosh Road Bye Lane,<br> 
-                Near New Kishan Soap Factory, Raniganj,<br> 
-                Paschim Bardhaman, 713347
-            </p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Rent My Tech. All rights reserved.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                    <h3><i class="fa-solid fa-desktop"></i> Intel
