@@ -102,19 +102,19 @@
             margin-bottom: 20px;
         }
 
-        /* PRICING GRID & CARDS (2 columns) */
+        /* PRICING GRID & CARDS (FORCED 2 COLUMNS) */
         .pricing-grid {
             display: flex;
             justify-content: flex-start;
             flex-wrap: wrap;
-            gap: 30px; /* Increased gap for 2 columns */
+            gap: 30px; 
             margin-bottom: 30px;
         }
         
         .pricing-grid h3 {
             color: var(--dark-text);
             margin-top: 0;
-            font-size: 1.5em; /* Larger font for 2 columns */
+            font-size: 1.5em;
             display: flex;
             align-items: center;
         }
@@ -130,7 +130,7 @@
             padding: 25px; 
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            /* Calculate width for 2 columns with 30px gaps */
+            /* Calculate width for 2 columns with 30px gap */
             width: calc(50% - 15px); 
             min-width: 300px;
             transition: transform 0.3s;
@@ -153,7 +153,7 @@
 
         .price-box {
             text-align: right;
-            font-size: 1.8em; /* Larger price font */
+            font-size: 1.8em;
             color: var(--price-red);
             font-weight: bold;
             margin-top: 20px;
@@ -244,10 +244,10 @@
             margin-top: 40px;
         }
 
-        /* Responsive adjustments */
+        /* Responsive adjustments - Keep 2 columns until small screen */
         @media (max-width: 768px) {
             .pricing-card {
-                width: 100%;
+                width: 100%; /* Switch to 1 column on tablets and smaller */
                 min-width: unset;
             }
             .contact-shortcuts {
@@ -258,6 +258,13 @@
                 margin: 0 10px;
                 display: block;
                 padding: 10px 0;
+            }
+        }
+        
+        /* Ensure 2 columns on larger screens by explicitly setting min-width for grid */
+        @media (min-width: 769px) {
+            .pricing-grid {
+                justify-content: space-between; /* Better visual spacing on larger screens */
             }
         }
     </style>
