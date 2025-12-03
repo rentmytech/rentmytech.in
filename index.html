@@ -9,15 +9,15 @@
     <style>
         /* Base Variables and Fonts */
         :root {
-            --dark-header: #34495e; /* Navy/Dark Slate */
-            --primary-blue: #007bff; /* Accent Blue for links/highlights */
+            --dark-header: #34495e; 
+            --primary-blue: #007bff; 
             --light-text: #ecf0f1;
             --dark-text: #2c3e50;
             --background-start: #ffffff;
-            --background-end: #d6e9f9; /* Light Cool Blue for gradient */
+            --background-end: #d6e9f9;
             --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            --price-red: #e74c3c; /* Clear Red for Price */
-            --secondary-color: #6c757d; /* Gray for subtle text */
+            --price-red: #e74c3c; 
+            --secondary-color: #6c757d;
         }
 
         body {
@@ -25,7 +25,6 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            /* Cool Gradient Background matching the design image */
             background: linear-gradient(to bottom, var(--background-start) 0%, var(--background-end) 100%);
             color: var(--dark-text);
             min-height: 100vh;
@@ -64,7 +63,7 @@
         }
 
         nav {
-            background: #2c3e50; /* Slightly darker bar for navigation */
+            background: #2c3e50;
             text-align: center;
             padding: 10px 0;
             border-radius: 5px;
@@ -89,7 +88,7 @@
         section {
             padding: 40px 0;
             margin-top: 30px;
-            background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white boxes */
+            background-color: rgba(255, 255, 255, 0.95);
             border-radius: 10px;
             box-shadow: var(--card-shadow);
         }
@@ -103,37 +102,37 @@
             margin-bottom: 20px;
         }
 
-        /* PRICING GRID & CARDS (4 columns) */
+        /* PRICING GRID & CARDS (2 columns) */
         .pricing-grid {
             display: flex;
-            justify-content: flex-start; /* Aligns items to the left */
+            justify-content: flex-start;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 30px; /* Increased gap for 2 columns */
             margin-bottom: 30px;
         }
         
         .pricing-grid h3 {
             color: var(--dark-text);
             margin-top: 0;
-            font-size: 1.2em; /* Slightly smaller for 4 columns */
+            font-size: 1.5em; /* Larger font for 2 columns */
             display: flex;
             align-items: center;
         }
         
         .pricing-grid h3 i {
-            margin-right: 8px;
+            margin-right: 10px;
             color: var(--primary-blue);
-            font-size: 1.1em;
+            font-size: 1.2em;
         }
 
         .pricing-card {
             background: #ffffff;
-            padding: 18px; /* Slightly reduced padding */
+            padding: 25px; 
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            /* Calculate width for 4 columns with 20px gaps */
-            width: calc(25% - 15px); 
-            min-width: 200px;
+            /* Calculate width for 2 columns with 30px gaps */
+            width: calc(50% - 15px); 
+            min-width: 300px;
             transition: transform 0.3s;
             border: 1px solid #ddd;
             display: flex;
@@ -149,16 +148,16 @@
         .pricing-card p {
             margin: 8px 0;
             color: var(--secondary-color);
-            font-size: 0.9em;
+            font-size: 1em;
         }
 
         .price-box {
             text-align: right;
-            font-size: 1.5em; /* Slightly smaller price font */
+            font-size: 1.8em; /* Larger price font */
             color: var(--price-red);
             font-weight: bold;
-            margin-top: 15px;
-            padding-top: 10px;
+            margin-top: 20px;
+            padding-top: 15px;
             border-top: 1px dashed #eee;
         }
         
@@ -246,19 +245,7 @@
         }
 
         /* Responsive adjustments */
-        @media (max-width: 1250px) {
-             .pricing-card {
-                width: calc(33.33% - 15px); /* Drops to 3 columns on smaller screens */
-            }
-        }
-        
-        @media (max-width: 850px) {
-            .pricing-card {
-                width: calc(50% - 10px); /* Drops to 2 columns */
-            }
-        }
-        
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .pricing-card {
                 width: 100%;
                 min-width: unset;
