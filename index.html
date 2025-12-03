@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,11 +33,33 @@
             box-shadow: var(--shadow);
         }
 
-        header h1 {
-            font-size: 2.6rem;
-            margin: 0 0 10px;
-            font-weight: 700;
-        }
+        /* ✅ PREMIUM BRAND TITLE STYLING */
+.brand-title {
+  margin: 0;
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, #ffffff, #cfe2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ✅ Night mode glow */
+.dark-mode .brand-title {
+  background: linear-gradient(90deg, #ffffff, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+/* ✅ Mobile fix */
+@media (max-width: 768px) {
+  .brand-title {
+    font-size: 2.2rem;
+  }
+}
 
         nav {
             margin-top: 15px;
@@ -65,6 +87,34 @@
             margin-top: 0;
             font-size: 2rem;
             color: var(--primary);
+            font-weight: 800;
+        }
+/* ✅ LOGO VISIBILITY FIX FOR DARK MODE */
+.site-logo {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 130px;
+  max-width: 100%;
+  object-fit: contain;
+  padding: 8px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.6);
+}
+
+/* ✅ Extra glow only in dark mode */
+.dark-mode .site-logo {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 22px rgba(255, 255, 255, 0.9);
+}
+
+
+/* Dark mode heading fix */
+.dark-mode h2 {
+            color: #4da3ff !important;
+            font-weight: 900 !important;
         }
 
         /* PRODUCT GRID */
@@ -96,6 +146,12 @@
             font-weight: 700;
         }
 
+/* Dark mode product title fix */
+.dark-mode .pricing-card h3 {
+            color: #82b7ff !important; /* softer blue, different from heading */
+            font-weight: 800 !important;
+        }
+
         .pricing-card p {
             margin: 5px 0;
         }
@@ -103,9 +159,21 @@
         .price-box {
             text-align: right;
             margin-top: 15px;
-            font-size: 1.6rem;
-            font-weight: bold;
-            color: var(--accent);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #25d366; /* WhatsApp green */
+            opacity: 0.85;
+        }
+
+.dark-mode .price-box {
+            color: #1fa956 !important; /* softer dark‑mode green */
+            opacity: 0.65 !important; /* reduced highlight */
+        }
+
+/* Dark mode price tone down */
+.dark-mode .price-box {
+            color: #00cc88 !important;
+            opacity: 0.75 !important;
         }
 
         /* CONTACT BUTTONS */
@@ -179,24 +247,100 @@
 .dark-mode nav a { color:#fff !important; }
 .dark-mode .price-box { color:#00ff99 !important; }
 .dark-mode footer { color:#ccc !important; }
+.rent-btn{width:100%;margin-bottom:10px;padding:10px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;transition:0.2s;} .rent-btn:hover{background:var(--primary-dark);} 
+#rentModal .box{
+  background: #ffffff !important;
+  color: #000 !important;
+  backdrop-filter: none !important;
+  animation: popIn 0.35s ease;
+  border-radius: 18px;
+}
+@keyframes popIn{0%{transform:scale(0.8);opacity:0;}100%{transform:scale(1);opacity:1;}}
+iframe{width:100% !important; height:80vh !important;} 
+
+/* ✅ Quick Form Perfect Alignment Fix */
+#contact input {
+  box-sizing: border-box;
+  font-size: 15px;
+  line-height: 1.4;
+}
+/* ✅ FIX: Google Form Visible in Dark Mode */
+.dark-mode iframe {
+  background: #ffffff !important;
+  border-radius: 14px;
+}
+
+/* ✅ FIX: Modal Background in Dark Mode */
+.dark-mode #rentModal .box {
+  background: #ffffff !important;
+  color: #000 !important;
+  box-shadow: 0 0 30px rgba(255,255,255,0.25) !important;
+}
+
+/* ✅ FIX: Blur Overlay Not Blocking Form */
+#rentModal {
+  z-index: 99999 !important;
+}
+/* ✅ MOBILE LOGO OVERLAP FIX */
+@media (max-width: 768px) {
+  .site-logo {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    height: 70px !important;
+    margin-bottom: 10px;
+  }
+
+  header {
+    padding-top: 20px !important;
+  }
+
+  header > div {
+    padding-top: 0 !important;
+  }
+}
+
 </style>
 </head>
 <body>
-    <header>
-        <h1>Rent My Tech</h1>
-        <p>Your trusted partner for laptop & PC rentals in Kolkata</p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#story">Story</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <header style="position:relative;">
+
+  <!-- ✅ BIG LOGO FIXED ON LEFT -->
+  <img 
+  src="logo.png" 
+  alt="Rent My Tech Logo"
+  class="site-logo"
+>
+
+  <!-- ✅ CENTERED TEXT -->
+  <div style="text-align:center;">
+    <h1 class="brand-title">Rent My Tech</h1>
+    <p style="margin:8px 0 0;">Your trusted partner for laptop & PC rentals in Kolkata</p>
+  </div>
+
+  <!-- ✅ NAVIGATION -->
+  <nav style="margin-top:20px; text-align:center;">
+    <a href="#about">About</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#story">Story</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+</header>
 
 <!-- DARK MODE TOGGLE BUTTON -->
 <button id="darkToggle" style="position:fixed; bottom:20px; right:20px; padding:12px 18px; background:#0062ff; color:#fff; border:none; border-radius:8px; font-weight:bold; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:999;">🌙 Dark Mode</button>
 
 <script>
+/* ✅ WHATSAPP RENT NOW FIX */
+function rentNow(model) {
+  const message = `Hi! I am interested in renting the ${model}. Please share the best price and availability.`;
+  const phone = "916291666200";
+  const whatsappURL = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+  window.open(whatsappURL, "_blank");
+}
+
 // Dark Mode Toggle
 const toggleBtn = document.getElementById('darkToggle');
 toggleBtn.onclick = () => {
@@ -253,7 +397,7 @@ toggleBtn.onclick = () => {
 
 <section id="pricing">
         <h2>Products & Pricing</h2>
-        <p>Choose from our high‑performance laptops & desktop PCs. Ideal for offices, students, startups, and events.</p>
+        <p>Choose from our high-performance laptops & desktop PCs. Ideal for offices, students, startups, and events.</p>
 
         <h3 style="margin-top:30px;">Laptop Configurations</h3>
         <div class="pricing-grid">
@@ -262,6 +406,7 @@ toggleBtn.onclick = () => {
                 <p><strong>RAM:</strong> 8 GB</p>
                 <p><strong>Storage:</strong> 256GB SSD</p>
                 <div class="price-box">₹1300 / month</div>
+                <button class="rent-btn" onclick="rentNow('Intel i3 Laptop')">Rent Now</button>
             </div>
 
             <div class="pricing-card">
@@ -269,13 +414,15 @@ toggleBtn.onclick = () => {
                 <p><strong>RAM:</strong> 8 GB</p>
                 <p><strong>Storage:</strong> 256GB SSD</p>
                 <div class="price-box">₹1800 / month</div>
+                <button class="rent-btn" onclick="rentNow('Intel i5 Laptop')">Rent Now</button>
             </div>
 
             <div class="pricing-card">
-                <h3><i class="fa-solid fa-laptop"></i> Intel i5 Laptop (High Storage)</h3>
+                <h3><i class="fa-solid fa-laptop"></i> Intel i5 Laptop</h3>
                 <p><strong>RAM:</strong> 8 GB</p>
                 <p><strong>Storage:</strong> 512GB SSD</p>
                 <div class="price-box">₹1900 / month</div>
+                <button class="rent-btn" onclick="rentNow('Intel i5 Laptop 512GB')">Rent Now</button>
             </div>
 
             <div class="pricing-card">
@@ -283,6 +430,7 @@ toggleBtn.onclick = () => {
                 <p><strong>RAM:</strong> 16 GB</p>
                 <p><strong>Storage:</strong> 512GB SSD</p>
                 <div class="price-box">₹2300 / month</div>
+                <button class="rent-btn" onclick="rentNow('Intel i7 Laptop')">Rent Now</button>
             </div>
         </div>
 
@@ -293,6 +441,7 @@ toggleBtn.onclick = () => {
                 <p><strong>RAM:</strong> 8 GB</p>
                 <p><strong>Storage:</strong> 256GB SSD</p>
                 <div class="price-box">₹1300 / month</div>
+                <button class="rent-btn" onclick="rentNow('Intel i3 Desktop PC')">Rent Now</button>
             </div>
 
             <div class="pricing-card">
@@ -300,13 +449,15 @@ toggleBtn.onclick = () => {
                 <p><strong>RAM:</strong> 8 GB</p>
                 <p><strong>Storage:</strong> 256GB SSD</p>
                 <div class="price-box">₹1800 / month</div>
+                <button class="rent-btn" onclick="rentNow('Intel i5 Desktop PC')">Rent Now</button>
             </div>
 
             <div class="pricing-card">
-                <h3><i class="fa-solid fa-desktop"></i> Intel i5 Desktop (High Storage)</h3>
+                <h3><i class="fa-solid fa-desktop"></i> Intel i5 Desktop PC</h3>
                 <p><strong>RAM:</strong> 8 GB</p>
                 <p><strong>Storage:</strong> 512GB SSD</p>
                 <div class="price-box">₹1900 / month</div>
+                <button class="rent-btn" onclick="rentNow('Intel i5 Desktop PC 512GB')">Rent Now</button>
             </div>
 
             <div class="pricing-card">
@@ -314,6 +465,32 @@ toggleBtn.onclick = () => {
                 <p><strong>RAM:</strong> 16 GB</p>
                 <p><strong>Storage:</strong> 512GB SSD</p>
                 <div class="price-box">₹2300 / month</div>
+                <button class="rent-btn" onclick="rentNow('Intel i7 Desktop PC')">Rent Now</button>
+            </div>
+        </div>
+    </section>
+
+<section id="in-box">
+        <h2>What’s Included With Your Rental</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;">
+            <div style="padding:25px;border-radius:12px;box-shadow:var(--shadow);background:var(--card-bg);">
+                <h3>Desktop Rental Package</h3>
+                <ul>
+                    <li>1 CPU + Keyboard + Mouse + Monitor</li>
+                    <li>HDMI / VGA Cable</li>
+                    <li>CPU Power Cable + Monitor Cable</li>
+                    <li>Windows 11 Home / Pro Installed</li>
+                    <li>Microsoft Office 365 Pro Plus Activated</li>
+                </ul>
+            </div>
+
+            <div style="padding:25px;border-radius:12px;box-shadow:var(--shadow);background:var(--card-bg);">
+                <h3>Laptop Rental Package</h3>
+                <ul>
+                    <li>Laptop with Power Adapter</li>
+                    <li>Windows 11 Home / Pro Installed</li>
+                    <li>Microsoft Office 365 Pro Plus Activated</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -327,18 +504,276 @@ toggleBtn.onclick = () => {
         <p>Our commitment to service excellence, transparent pricing, and customer satisfaction has made us the preferred tech rental partner for hundreds of businesses across Kolkata and West Bengal. Whether you are expanding your workforce, executing a temporary assignment, or setting up a new office, Rent My Tech is here to support your growth.</p>
     </section>
 
-    <section id="contact" style="background:var(--card-bg); color:var(--text-dark);">
-        <h2>Get in Touch</h2>
-        <div class="contact-shortcuts">
-            <a href="https://t.me/rentmytechin" target="_blank" class="telegram"><i class="fa-brands fa-telegram"></i>&nbsp; Telegram</a>
-            <a href="https://wa.me/916291666200" target="_blank" class="whatsapp"><i class="fa-brands fa-whatsapp"></i>&nbsp; WhatsApp</a>
-            <a href="tel:+916291666200" class="call"><i class="fa-solid fa-phone"></i>&nbsp; Call</a>
-        </div>
+    <section id="contact" style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;">
 
-        <div style="margin-top:25px; padding:20px; background:var(--card-bg)">
-            <h3>Contact Details</h3>
-            <p><strong>Email:</strong> support@rentmytech.in</p>
-            <p><strong>Phone:</strong> 6291 666 200</p>
-            <h3>Office Address</h3>
-            <p>Hasina More, Dr. M.N.Ghosh Road Bye Lane,<br>Near New Kishan Soap Factory,<br>Raniganj, Paschim Bardhaman, 713347</p>
+  <!-- ✅ LEFT SIDE: CONTACT DETAILS -->
+  <div style="flex:1;min-width:280px;">
+
+    <h2>Get in Touch</h2>
+
+    <div class="contact-shortcuts" style="margin-bottom:25px;">
+      <a href="https://t.me/rentmytechin" class="telegram">Telegram</a>
+      <a href="https://wa.me/916291666200" class="whatsapp">WhatsApp</a>
+      <a href="tel:+916291666200" class="call">Call</a>
+  </div>
+
+    <h3>Contact Details</h3>
+    <p><b>Email:</b> support@rentmytech.in</p>
+    <p><b>Phone:</b> 6291 666 200</p>
+
+    <h3>Office Address</h3>
+    <p>Hasina More, Dr. M.N. Ghosh Road Bye Lane, Near New Kishan Soap Factory, Raniganj, Paschim Bardhaman – 713347</p>
+
+  </div>
+
+  <!-- ✅ RIGHT SIDE: QUICK WHATSAPP INQUIRY (THIS WAS MISSING) -->
+  <div style="
+    flex:1;
+    min-width:280px;
+    background:#1f1f1f;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    color:white;
+  ">
+
+    <h3 style="margin-top:0;color:#00d4ff;">Quick Rental Inquiry</h3>
+
+    <input id="qName" placeholder="Your Name"
+      style="width:100%;padding:10px;border-radius:8px;border:none;margin-bottom:10px;">
+
+    <input id="qPhone" placeholder="Phone Number"
+      style="width:100%;padding:10px;border-radius:8px;border:none;margin-bottom:10px;">
+
+    <input id="qMsg" placeholder="Which laptop or desktop do you want?"
+      style="width:100%;padding:10px;border-radius:8px;border:none;margin-bottom:15px;">
+
+    <button onclick="sendQuickWhatsApp()" style="
+      width:100%;
+      padding:12px;
+      border:none;
+      border-radius:10px;
+      background:#25d366;
+      color:white;
+      font-weight:700;
+      cursor:pointer;
+    ">
+      Send on WhatsApp
+    </button>
+
+  </div>
+
+</section>
+
             
+
+<!-- Rent Form Modal -->
+<div id="rentModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:9999;">
+  <div class="box" style="background:var(--card-bg); padding:0; width:95%; max-width:700px; border-radius:12px; box-shadow:var(--shadow); color:var(--text-dark); overflow:hidden;">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdXqXWHRZS2H9_AtsZ65xuwaJeD9D4EEnTlge14LhlOiobjjw/viewform?embedded=true" width="100%" 
+  height="80vh" 
+  frameborder="0"
+  style="border-radius:14px; background:#fff;">
+</iframe>
+
+    <button onclick="closeRentForm()" style="width:100%; padding:15px; background:#444; color:#fff; border:none; border-radius:0 0 12px 12px; font-weight:700; cursor:pointer;">Close</button>
+  </div>
+</div>
+
+<script>
+/* ✅ GOOGLE FORM POPUP FIX */
+function openRentForm() {
+  document.getElementById("rentModal").style.display = "flex";
+}
+
+function closeRentForm() {
+  document.getElementById("rentModal").style.display = "none";
+}
+
+function submitRequest(){
+    const product = document.getElementById('productTitle').innerText;
+    const company = document.getElementById('companyName').value;
+    const person = document.getElementById('contactPerson').value;
+    const phone = document.getElementById('contactNumber').value;
+    const email = document.getElementById('email').value;
+    const qty = document.getElementById('quantity').value;
+
+    const mailBody = `Product: ${product}%0D%0ACompany: ${company}%0D%0AContact Person: ${person}%0D%0APhone: ${phone}%0D%0AEmail: ${email}%0D%0AQuantity: ${qty}`;
+
+    window.location.href = `mailto:support@rentmytech.in?subject=New Rental Request&body=${mailBody}`;
+
+    closeRentForm();
+}
+</script>
+
+<!-- ========= TERMS & CONDITIONS (TOGGLE) ========= -->
+<section id="terms" style="width:92%; max-width:1200px; margin:40px auto;">
+  <!-- Toggle Buttons Row -->
+  <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+
+  <button id="termsToggle" style="
+    padding:12px 18px;
+    background:var(--primary);
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+  ">
+    📜 View Terms & Conditions
+  </button>
+
+  <button id="gstToggle" style="
+    padding:12px 18px;
+    background:var(--primary-dark);
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+  ">
+    🧾 View GST Terms
+  </button>
+
+  <a href="#" onclick="openRentForm()" style="
+    padding:12px 18px;
+    background:#444;
+    color:#fff;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+    box-shadow:var(--shadow);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  ">
+    📄 Custom Rental Inquiry
+  </a>
+
+</div>
+
+
+  <div id="termsContent"  style="display:none; margin-top:20px; padding:25px; background:var(--card-bg); border-radius:16px; box-shadow:var(--shadow); color:var(--text-dark);">
+    <h2>Rent My Tech – Terms & Conditions</h2>
+    <p>By using our services and renting any product from Rent My Tech, you agree to the following Terms & Conditions:</p>
+
+    <ul style="line-height:1.9;">
+      <li><strong>Minimum Rental Period:</strong> The minimum rental period is 1 month for all products. Rentals for less than one month are not allowed.</li>
+
+      <li><strong>Advance Payment & Security Deposit:</strong>
+        <ul>
+          <li>For 1‑month rental: 1 month advance rent + 1 month security deposit is required before delivery/collection.</li>
+          <li>For rentals above 3 months: 2 months advance rent is required.</li>
+          <li>The security deposit is refundable after product return and successful inspection.</li>
+        </ul>
+      </li>
+
+      <li><strong>Damage, Loss & Replacement:</strong> If any physical or internal damage, misuse, tampering, or missing accessories are found, the customer must bear the full repair or replacement cost including transportation and service charges.</li>
+
+      <li><strong>Pricing & GST:</strong> All prices listed on our website are base prices. GST will be added as per Government rules during billing.</li>
+
+      <li><strong>Product Collection & Delivery:</strong> Products must be collected from our Kolkata office. If delivery is requested, delivery charges may apply depending on location and order size. In some cases, free delivery may be offered at our discretion.</li>
+
+      <li><strong>Illegal Use & Legal Responsibility:</strong> The rented device must not be used for any illegal activities. If we receive any legal notice or complaint related to the usage, the customer using the device at that time will be fully responsible. Rent My Tech will not be liable in such cases.</li>
+
+      <li><strong>Ownership of Products:</strong> All rental products remain the property of Rent My Tech. Ownership does not transfer to the customer at any time.</li>
+
+      <li><strong>No Transfer Policy:</strong> The rented product cannot be transferred, sub‑rented, or handed over to a third party without written approval from Rent My Tech.</li>
+
+      <li><strong>Late Payment Policy:</strong> Late rental payments may result in service suspension, penalty charges, product recovery, or forfeiture of security deposit.</li>
+
+      <!-- Added important professional clauses -->
+      <li><strong>Data Responsibility:</strong> The customer is fully responsible for their data. Rent My Tech is not responsible for any loss of data during usage, service, or replacement.</li>
+
+      <li><strong>Software Licensing:</strong> All software is provided for business use only. Any misuse, piracy, or illegal installation by the customer is strictly prohibited and will attract legal action.</li>
+
+      <li><strong>Early Termination:</strong> If the customer terminates the rental before the agreed minimum period, advance rent shall not be refundable.</li>
+
+      <li><strong>Upgrades / Downgrades:</strong> Hardware upgrades or downgrades during the rental period are subject to availability and revised pricing.</li>
+
+      <li><strong>Force Majeure:</strong> Rent My Tech shall not be liable for failure to perform obligations due to events beyond reasonable control (natural disasters, government actions, network failures, etc.).</li>
+
+      <li><strong>Jurisdiction:</strong> All disputes shall be subject to the jurisdiction of courts in West Bengal, India.</li>
+
+      <li><strong>Company Rights:</strong> Rent My Tech reserves the right to update or modify these Terms & Conditions at any time without prior notice. All decisions taken by Rent My Tech shall be final and binding.</li>
+    </ul>
+  </div>
+</section>
+
+  
+  <div id="gstContent" style="display:none; margin-top:20px; padding:25px; background:var(--card-bg); border-radius:16px; box-shadow:var(--shadow); color:var(--text-dark);">
+    <h2>GST & Taxation Policy</h2>
+    <ul style="line-height:1.9;">
+      <li>All rental prices displayed on the website are <strong>exclusive of GST</strong>, unless clearly mentioned otherwise.</li>
+      <li><strong>GST will be charged as per prevailing Government of India rules</strong> at the time of billing.</li>
+      <li>A <strong>valid GST Invoice</strong> will be issued for every applicable transaction.</li>
+      <li>Customers who wish to claim <strong>Input Tax Credit (ITC)</strong> must provide a <strong>valid GSTIN</strong> and correct billing details at the time of order.</li>
+      <li>Any <strong>GST rate change by the Government</strong> will be applicable immediately without prior notice.</li>
+      <li>Rent My Tech shall <strong>not be responsible for denial of ITC</strong> due to incorrect GST details, delayed filing, or non-compliance by the customer.</li>
+      <li>In case of <strong>GST-exempt billing (if applicable)</strong>, the same will be clearly mentioned on the invoice.</li>
+      <li>All other <strong>statutory taxes, duties, and government levies</strong> shall be charged as applicable at the time of invoicing.</li>
+    </ul>
+  </div>
+</section>
+
+<script>
+const termsBtn = document.getElementById('termsToggle');
+const termsBox = document.getElementById('termsContent');
+const gstBtn = document.getElementById('gstToggle');
+const gstBox = document.getElementById('gstContent');
+
+function closeAllAccordions() {
+  if (termsBox) termsBox.style.display = 'none';
+  if (gstBox) gstBox.style.display = 'none';
+  if (termsBtn) termsBtn.textContent = '📜 View Terms & Conditions';
+  if (gstBtn) gstBtn.textContent = '🧾 View GST Terms';
+}
+
+if (termsBtn) {
+  termsBtn.addEventListener('click', () => {
+    const isOpen = termsBox.style.display === 'block';
+    closeAllAccordions();
+    if (!isOpen) {
+      termsBox.style.display = 'block';
+      termsBtn.textContent = '❌ Hide Terms & Conditions';
+    }
+  });
+}
+
+if (gstBtn) {
+  gstBtn.addEventListener('click', () => {
+    const isOpen = gstBox.style.display === 'block';
+    closeAllAccordions();
+    if (!isOpen) {
+      gstBox.style.display = 'block';
+      gstBtn.textContent = '❌ Hide GST Terms';
+    }
+  });
+}
+</script>
+
+<script>
+function sendQuickWhatsApp(){
+
+  let name = document.getElementById("qName").value;
+  let phone = document.getElementById("qPhone").value;
+  let msg = document.getElementById("qMsg").value;
+
+  let text = `Hello Rent My Tech Team,
+
+I would like to inquire about laptop/PC rental.
+
+Name: ${name}
+Phone: ${phone}
+Requirement: ${msg}
+
+Please share availability, best price, and delivery details.
+
+Thank you.`;
+
+  let url = "https://api.whatsapp.com/send?phone=916291666200&text=" + encodeURIComponent(text);
+  window.open(url, "_blank");
+}
+</script>
