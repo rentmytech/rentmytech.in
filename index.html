@@ -27,12 +27,12 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            /* Applying the textured background */
+            /* FIX: Applying the textured background */
             background-color: var(--background-end);
             background-image: var(--texture-url);
             color: var(--dark-text);
             min-height: 100vh;
-            font-size: 0.95em; /* Slight overall text size reduction */
+            font-size: 0.95em; 
         }
 
         .container {
@@ -45,7 +45,7 @@
         
         /* FIX: Increased horizontal padding to push content away from edge */
         section {
-            padding: 40px 60px; /* Increased horizontal padding (60px) */
+            padding: 40px 60px; /* Generous horizontal padding */
             margin: 30px auto;
             background-color: rgba(255, 255, 255, 0.98); 
             border-radius: 12px;
@@ -53,6 +53,7 @@
             max-width: 1200px;
         }
         
+        /* FIX: Ensure main headings are left-aligned */
         h2 {
             text-align: left !important;
             margin-bottom: 25px;
@@ -87,6 +88,7 @@
             background: #ffffff;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* FIX: Ensures 2 cards per row on desktop */
             width: calc(50% - 10px); 
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #ddd;
@@ -121,7 +123,7 @@
         }
 
         .card-content p {
-            font-size: 0.9em; /* Slight reduction for better fit */
+            font-size: 0.9em; 
         }
 
         .price-box {
@@ -135,6 +137,18 @@
         }
         
         /* CONTACT STYLING */
+        .contact-shortcuts a {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: var(--light-text);
+            border-radius: 5px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+        
+        /* FIX: Contact Button Backgrounds */
         .telegram-link { background-color: #0088cc; }
         .whatsapp-link { background-color: #25d366; }
         .phone-link { background-color: #3498db; }
@@ -149,7 +163,7 @@
         /* RESPONSIVENESS */
         @media (max-width: 650px) {
             .pricing-card {
-                width: 100%; 
+                width: 100%; /* 1 card per row on mobile */
                 min-width: unset;
             }
             .contact-shortcuts {
