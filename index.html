@@ -9,15 +9,15 @@
     <style>
         /* Base Variables and Fonts */
         :root {
-            --dark-header: #2c3e50; /* Darker Navy */
-            --primary-blue: #3498db; /* Brighter Accent Blue */
+            --dark-header: #2c3e50;
+            --primary-blue: #3498db;
             --light-text: #ecf0f1;
             --dark-text: #2c3e50;
-            --heading-bg: #e74c3c; /* Striking Red/Orange for Highlights */
-            --background-end: #f4f6f9; /* Light Cool Blue/Gray */
+            --heading-bg: #e74c3c; 
+            --background-end: #f4f6f9; 
             --card-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-            --price-accent: #2ecc71; /* Green for Price */
-            --secondary-color: #6c757d; /* Gray for subtle text */
+            --price-accent: #2ecc71; 
+            --secondary-color: #6c757d; 
             --texture-url: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><g fill='%23d6e9f9' fill-opacity='0.4'><path fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/></g></svg>");
         }
 
@@ -32,6 +32,7 @@
             min-height: 100vh;
         }
 
+        /* FIX: Ensure content containers are centered */
         .container {
             width: 90%; 
             max-width: 1200px;
@@ -40,16 +41,21 @@
             padding: 20px 0;
         }
         
-        /* FIX 2: Increased Section Padding */
+        /* FIX 2: Increased Section Padding and Centered Block */
         section {
-            padding: 40px 40px; /* Increased padding inside the white container */
-            margin: 30px auto;
+            padding: 40px 40px; /* Generous padding around all content */
+            margin: 30px auto; /* Centers the whole white section block */
             background-color: rgba(255, 255, 255, 0.98); 
             border-radius: 12px;
             box-shadow: var(--card-shadow);
             max-width: 1200px;
         }
         
+        /* FIX 1: Left-align main headings */
+        h2 {
+            text-align: left !important;
+        }
+
         /* HEADER STYLING */
         header {
             background: var(--dark-header);
@@ -58,22 +64,13 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
-
+        
+        /* NAVIGATION */
         nav {
             background: #2c3e50;
             text-align: center;
             padding: 10px 0;
             border-radius: 5px;
-        }
-        
-        nav a {
-            color: var(--light-text);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin: 0 15px;
-            padding: 5px 0;
-            transition: color 0.3s, border-bottom 0.3s;
         }
 
         /* PRICING GRID & CARDS */
@@ -89,16 +86,10 @@
             background: #ffffff;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            /* FIX 3: Ensures 2 cards per row on desktop */
-            width: calc(50% - 10px); 
+            width: calc(50% - 10px); /* 2 cards per row on desktop */
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #ddd;
             overflow: hidden;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         /* HIGHLIGHTED HEADING */
@@ -110,7 +101,6 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 10px;
-            /* Ensures heading background is fully flush */
         }
         
         .card-header-highlight h3 {
@@ -122,16 +112,11 @@
         }
 
         .card-content {
-            padding: 0 20px 20px 20px;
+            padding: 0 20px 20px 20px; /* Padding for inner content */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             min-height: 120px;
-        }
-
-        .card-content p {
-            margin: 5px 0;
-            color: var(--secondary-color);
         }
 
         .price-box {
@@ -145,19 +130,6 @@
         }
         
         /* CONTACT STYLING */
-        
-        /* FIX 1: Restore button background colors */
-        .contact-shortcuts a {
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: var(--light-text);
-            border-radius: 5px;
-            font-weight: bold;
-            transition: opacity 0.3s;
-        }
-
         .telegram-link { background-color: #0088cc; }
         .whatsapp-link { background-color: #25d366; }
         .phone-link { background-color: #3498db; }
@@ -181,10 +153,6 @@
             }
              section {
                 padding: 20px 15px; /* Reduced section padding for smaller screens */
-            }
-            .contact-shortcuts a {
-                width: 100%;
-                justify-content: center;
             }
         }
     </style>
