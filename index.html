@@ -118,13 +118,20 @@
         .contact-shortcuts a {
             display: flex;
             align-items: center;
-            background: var(--primary);
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
             padding: 12px 20px;
-            border-radius: 8px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: bold;
-            transition: background 0.2s;
+            transition: all 0.3s ease;
+        }
+
+        .contact-shortcuts a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
         }
 
         .contact-shortcuts a:hover {
@@ -259,7 +266,7 @@ toggleBtn.onclick = () => {
             </div>
 
             <div class="pricing-card">
-                <h3><i class="fa-solid fa-laptop"></i> Intel i5 (High Storage)</h3>
+                <h3><i class="fa-solid fa-laptop"></i> Intel i5 Laptop (High Storage)</h3>
                 <p><strong>RAM:</strong> 8 GB</p>
                 <p><strong>Storage:</strong> 512GB SSD</p>
                 <div class="price-box">₹1900 / month</div>
@@ -290,7 +297,7 @@ toggleBtn.onclick = () => {
             </div>
 
             <div class="pricing-card">
-                <h3><i class="fa-solid fa-desktop"></i> Intel i5 High Storage</h3>
+                <h3><i class="fa-solid fa-desktop"></i> Intel i5 Desktop (High Storage)</h3>
                 <p><strong>RAM:</strong> 8 GB</p>
                 <p><strong>Storage:</strong> 512GB SSD</p>
                 <div class="price-box">₹1900 / month</div>
