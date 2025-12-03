@@ -1,91 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rent My Tech</title>
-    <style>
-        body { margin:0; font-family: Arial, sans-serif; background:#f5f5f5; }
-        header { background:#111; color:#fff; padding:40px 20px; text-align:center; }
-        header h1 { margin:0; font-size:42px; }
-        header p { font-size:18px; margin-top:10px; }
-
-        .section { padding:50px 20px; max-width:1100px; margin:auto; }
-        .services { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-        .card {
-            background:#fff;
-            padding:20px;
-            border-radius:10px;
-            box-shadow:0 2px 10px rgba(0,0,0,0.1);
-            width:300px;
-            text-align:center;
-        }
-        .card h3 { margin-top:0; }
-
-        .contact-box {
-            background:#fff;
-            padding:30px;
-            border-radius:10px;
-            box-shadow:0 2px 10px rgba(0,0,0,0.1);
-            text-align:center;
-        }
-
-        footer { background:#111; color:#fff; text-align:center; padding:20px; margin-top:40px; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent My Tech | Laptop & PC Rental Solutions in Kolkata</title>
+    <link rel="stylesheet" href="style.css"> 
 </head>
-<style>
-.float-btn {transition: transform 0.25s ease, box-shadow 0.25s ease;}
-.float-btn:hover {transform: scale(1.15); box-shadow:0 10px 20px rgba(0,0,0,0.35);}
-.tooltip {position:fixed; right:85px; background:#000; color:#fff; padding:6px 10px; border-radius:6px; font-size:14px; opacity:0; pointer-events:none; transition:opacity 0.2s ease;}
-</style>
 <body>
 
-<header>
-    <h1>Rent My Tech</h1>
-    <p>Affordable Laptop & Tech Rentals At Your Doorstep</p>
-</header>
-
-<section class="section">
-    <h2 style="text-align:center; margin-bottom:30px;">Our Services</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Laptop Rentals</h3>
-            <p>High-performance laptops for business, study, and work-from-home.</p>
+    <header>
+        <div class="container">
+            <h1>Rent My Tech</h1>
+            <p>Your trusted partner for professional tech rental solutions.</p>
+            <nav>
+                <a href="#about">About Us</a>
+                <a href="#pricing">Products & Pricing</a>
+                <a href="#story">Our Story</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
-        <div class="card">
-            <h3>Tech Support</h3>
-            <p>Get instant support for your rented devices anytime.</p>
+    </header>
+
+    <section id="about" class="container">
+        <h2>About Rent My Tech</h2>
+        <p>Your trusted partner for professional tech rental solutions. We provide quality laptops and PCs to businesses across Kolkata with reliable service and competitive pricing.</p>
+        
+        <h3>Primary Service Area:</h3>
+        <p><strong>Kolkata and surrounding areas</strong></p>
+        <h3>Extended Service:</h3>
+        <p>West Bengal (with additional charges)</p>
+    </section>
+
+    <section id="pricing" class="container">
+        <h2>Products & Pricing</h2>
+        <p>We offer high-quality laptops and desktop PCs with configuration options to suit every business need. Our basic rent starts from **₹1000 per month**.</p>
+        
+        <h3>Standard Laptop Configurations:</h3>
+        
+        <div class="pricing-grid">
+            
+            <div class="pricing-card">
+                <h3>Intel i3 Laptop</h3>
+                <p><strong>RAM:</strong> 8 GB</p>
+                <p><strong>Storage:</strong> 256 GB SSD</p>
+                <p class="price">Rental: **₹1300 / month**</p>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Intel i5 Laptop</h3>
+                <p><strong>RAM:</strong> 8 GB</p>
+                <p><strong>Storage:</strong> 256 GB SSD / 512 GB SSD</p>
+                <p class="price">Rental: **₹1800 / month**</p>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Intel i7 Laptop</h3>
+                <p><strong>RAM:</strong> 16 GB</p>
+                <p><strong>Storage:</strong> 512 GB SSD</p>
+                <p class="price">Rental: **₹2300 / month**</p>
+            </div>
+
         </div>
-        <div class="card">
-            <h3>Flexible Plans</h3>
-            <p>Daily, Weekly, Monthly rental plans available as per your need.</p>
+
+        <h3>Standard Desktop PC Configurations:</h3>
+        
+        <div class="pricing-grid">
+            
+            <div class="pricing-card">
+                <h3>Intel i3 Desktop PC</h3>
+                <p><strong>RAM:</strong> 8 GB</p>
+                <p><strong>Storage:</strong> 256 GB SSD</p>
+                <p class="price">Rental: **₹1300 / month**</p>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Intel i5 Desktop PC</h3>
+                <p><strong>RAM:</strong> 8 GB</p>
+                <p><strong>Storage:</strong> 256 GB SSD / 512 GB SSD</p>
+                <p class="price">Rental: **₹1800 / month**</p>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Intel i7 Desktop PC</h3>
+                <p><strong>RAM:</strong> 16 GB</p>
+                <p><strong>Storage:</strong> 512 GB SSD</p>
+                <p class="price">Rental: **₹2300 / month**</p>
+            </div>
+
         </div>
-    </div>
-</section>
+        
+        <p style="text-align: center; margin-top: 30px;">
+            **Customised PCs:** We can also provide tailored PCs based on your specific requirements.
+        </p>
+        <p style="text-align: center; font-weight: bold; color: red;">
+            **Bulk Orders:** Price is negotiable for bulk orders. Please contact us for a quote.
+        </p>
+    </section>
 
-<section class="section">
-    <h2 style="text-align:center; margin-bottom:30px;">Contact Us</h2>
-    <div class="contact-box">
-        <h3>Call Us</h3>
-        <p style="font-size:22px; font-weight:bold;"><a href="tel:6291666200" style="position:fixed; bottom:100px; right:20px; background:#e60023; color:#fff; width:55px; height:55px; display:flex; align-items:center; justify-content:center; border-radius:50%; text-decoration:none; font-size:26px; box-shadow:0 6px 14px rgba(0,0,0,0.25); z-index:999;">📞</a></p>
-        <p>Email: support@rentmytech.in</p>
-        <p><a href="https://wa.me/916291666200" style="position:fixed; bottom:30px; right:20px; background:#25D366; color:#fff; width:55px; height:55px; display:flex; align-items:center; justify-content:center; border-radius:50%; text-decoration:none; font-size:26px; box-shadow:0 6px 14px rgba(0,0,0,0.25); z-index:999;">💬</a></p>
-    </div>
-</section>
+    <section id="story" class="container">
+        <h2>Our Story</h2>
+        <p>Founded with a vision to make quality technology accessible to businesses of all sizes, Rent My Tech has become Kolkata's trusted partner for professional tech rental solutions.</p>
+        <p>We understand that businesses need reliable technology without the burden of large capital investments. Whether you're a startup scaling rapidly, an established company with temporary projects, or an enterprise needing additional capacity, we provide the right technology solutions.</p>
+        <p>Our commitment to quality, service excellence, and customer satisfaction has made us the preferred choice for hundreds of companies across Kolkata and surrounding areas.</p>
+    </section>
 
-<footer>
-    © 2025 Rent My Tech. All rights reserved.
-</footer>
+    <section id="contact" class="container">
+        <h2>Get In Touch</h2>
 
-<a href="tel:6291666200" style="position:fixed; bottom:100px; right:20px; background:#ff4444; color:#fff; padding:15px 20px; border-radius:50px; text-decoration:none; font-size:18px; box-shadow:0 4px 10px rgba(0,0,0,0.3); z-index:999;">📞</a>
+        <div class="contact-shortcuts">
+            <a href="https://t.me/rentmytechin" target="_blank" class="telegram-link">
+                Join Telegram
+            </a>
+            
+            <a href="https://wa.me/916291666200" target="_blank">
+                WhatsApp Us
+            </a>
 
-<a href="https://wa.me/916291666200" style="position:fixed; bottom:30px; right:20px; background:#25D366; color:#fff; padding:15px 20px; border-radius:50px; text-decoration:none; font-size:18px; box-shadow:0 4px 10px rgba(0,0,0,0.3); z-index:999;">💬</a>
+            <a href="tel:+916291666200" class="phone-link">
+                Call Us Now
+            </a>
+        </div>
 
-<div id="callTip" class="tooltip" style="bottom:110px;">Call Now</div>
-<div id="waTip" class="tooltip" style="bottom:40px;">Chat on WhatsApp</div>
-<script>
-const callBtn = document.getElementById('callBtn');
-const waBtn = document.getElementById('waBtn');
-</script>
+        <div class="contact-details" style="margin-top: 40px;">
+            <h3>Contact Details:</h3>
+            <p><strong>Email:</strong> <a href="mailto:support@rentmytech.in">support@rentmytech.in</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+916291666200">6291 666 200</a></p>
+            
+            <h3>Office Address:</h3>
+            <p>
+                Hasina More, Dr. M.N.Ghosh Road Bye Lane,<br> 
+                Near New Kishan Soap Factory, Raniganj,<br> 
+                Paschim Bardhaman, 713347
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rent My Tech. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
