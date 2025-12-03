@@ -18,6 +18,7 @@
             --card-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
             --price-accent: #2ecc71; 
             --secondary-color: #6c757d; 
+            /* Textured Background Definition */
             --texture-url: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><g fill='%23d6e9f9' fill-opacity='0.4'><path fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/></g></svg>");
         }
 
@@ -26,6 +27,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            /* Applying the textured background */
             background-color: var(--background-end);
             background-image: var(--texture-url);
             color: var(--dark-text);
@@ -41,7 +43,7 @@
             padding: 20px 0;
         }
         
-        /* FIX: Increased space within the white container and aligned content */
+        /* FIX: Increased horizontal padding to push content away from edge */
         section {
             padding: 40px 60px; /* Increased horizontal padding (60px) */
             margin: 30px auto;
@@ -53,7 +55,7 @@
         
         h2 {
             text-align: left !important;
-            margin-bottom: 25px; /* Added space below main headings */
+            margin-bottom: 25px;
         }
         
         /* HEADER STYLING */
@@ -118,6 +120,10 @@
             min-height: 120px;
         }
 
+        .card-content p {
+            font-size: 0.9em; /* Slight reduction for better fit */
+        }
+
         .price-box {
             text-align: right;
             font-size: 1.8em;
@@ -151,7 +157,7 @@
                 align-items: flex-start;
             }
             section {
-                padding: 20px 15px; /* Reduce padding significantly on mobile */
+                padding: 20px 15px; /* Reduced section padding for mobile to fit */
             }
         }
     </style>
@@ -288,4 +294,68 @@
             
             <div class="pricing-card">
                 <div class="card-header-highlight">
-                    <h3><i class="fa-solid fa-desktop"></i> Intel
+                    <h3><i class="fa-solid fa-desktop"></i> Intel i7 Desktop PC</h3>
+                </div>
+                <div class="card-content">
+                    <div>
+                        <p><strong>RAM:</strong> 16 GB</p>
+                        <p><strong>Storage:</strong> 512 GB SSD</p>
+                    </div>
+                    <div class="price-box">₹2300 / month</div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="disclaimer">
+            <p><strong>Customised PCs:</strong> We can also provide tailored PCs based on your specific requirements.</p>
+            <p class="bulk-note"><strong>Bulk Orders:</strong> Price is negotiable for bulk orders. Please contact us for a quote.</p>
+        </div>
+    </section>
+
+    <section id="story" class="container">
+        <h2>Our Story</h2>
+        <p>Founded with a vision to make quality technology accessible to businesses of all sizes, Rent My Tech has become Kolkata's trusted partner for professional tech rental solutions.</p>
+        <p>We understand that businesses need reliable technology without the burden of large capital investments. Whether you're a startup scaling rapidly, an established company with temporary projects, or an enterprise needing additional capacity, we provide the right technology solutions.</p>
+        <p>Our commitment to quality, service excellence, and customer satisfaction has made us the preferred choice for hundreds of companies across Kolkata and surrounding areas.</p>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Get In Touch</h2>
+
+        <div class="contact-shortcuts">
+            <a href="https://t.me/rentmytechin" target="_blank" class="telegram-link">
+                <i class="fa-brands fa-telegram"></i> Join Telegram
+            </a>
+            
+            <a href="https://wa.me/916291666200" target="_blank" class="whatsapp-link">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+            </a>
+
+            <a href="tel:+916291666200" class="phone-link">
+                <i class="fa-solid fa-phone"></i> Call Us Now
+            </a>
+        </div>
+
+        <div class="contact-details">
+            <h3>Contact Details:</h3>
+            <p><strong>Email:</strong> <a href="mailto:support@rentmytech.in">support@rentmytech.in</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+916291666200">6291 666 200</a></p>
+            
+            <h3>Office Address:</h3>
+            <p>
+                Hasina More, Dr. M.N.Ghosh Road Bye Lane,<br> 
+                Near New Kishan Soap Factory, Raniganj,<br> 
+                Paschim Bardhaman, 713347
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rent My Tech. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
