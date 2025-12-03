@@ -146,7 +146,27 @@
                 font-size: 2rem;
             }
         }
-    </style>
+    /* DARK MODE THEME */
+.dark-mode {
+    --primary: #1e1e1e;
+    --primary-dark: #000000;
+    --accent: #00ff99;
+    --card-bg: #2a2a2a;
+    --text-dark: #ffffff;
+    --section-bg: #1a1a1a;
+}
+.dark-mode section,
+.dark-mode .pricing-card {
+    background:#2a2a2a !important;
+    color:#fff !important;
+}
+.dark-mode header {
+    background:linear-gradient(135deg, #000, #333) !important;
+}
+.dark-mode nav a { color:#fff !important; }
+.dark-mode .price-box { color:#00ff99 !important; }
+.dark-mode footer { color:#ccc !important; }
+</style>
 </head>
 <body>
     <header>
@@ -160,15 +180,67 @@
         </nav>
     </header>
 
+<!-- DARK MODE TOGGLE BUTTON -->
+<button id="darkToggle" style="position:fixed; bottom:20px; right:20px; padding:12px 18px; background:#0062ff; color:#fff; border:none; border-radius:8px; font-weight:bold; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:999;">🌙 Dark Mode</button>
+
+<script>
+// Dark Mode Toggle
+const toggleBtn = document.getElementById('darkToggle');
+toggleBtn.onclick = () => {
+    document.body.classList.toggle('dark-mode');
+    toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+};
+</script>
+
     <section id="about">
         <h2>About Rent My Tech</h2>
-        <p>We provide premium quality laptops and desktop PCs for rent across Kolkata with fast delivery, replacement support, and business-friendly pricing.</p>
-        <p><strong>Service Areas:</strong> Kolkata & nearby regions (Extended: West Bengal)</p>
+        <p>Rent My Tech is your trusted B2B partner for professional tech rental solutions in Kolkata. We specialise in supplying high‑quality laptops and desktop PCs to businesses of all sizes—startups, SMEs, corporate offices, event companies, training centres, and IT-enabled organisations. Our rental service is designed specifically for business needs, ensuring reliability, scalability, and cost-efficiency.</p>
+        
+        <p>Whether your company needs systems for new employees, short‑term projects, internships, audits, training programs, or large deployments, we provide fast delivery, easy replacements, and ongoing support. We work closely with organisations to ensure they get stable machines, predictable monthly costs, and dependable service—without the heavy investment of purchasing hardware.</p>
+
+        <p><strong>Service Areas:</strong> Kolkata and surrounding regions (Extended rental options available across West Bengal).</p>
     </section>
 
-    <section id="pricing">
+<section id="why-us">
+    <h2>Why Choose Us</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:25px; margin-top:20px;">
+
+        <div style="background:var(--card-bg); padding:25px; border-radius:12px; box-shadow:var(--shadow);">
+            <h3>⚡ Fast Delivery</h3>
+            <p>We deliver laptops & PCs quickly across Kolkata so your work never stops.</p>
+        </div>
+
+        <div style="background:var(--card-bg); padding:25px; border-radius:12px; box-shadow:var(--shadow);">
+            <h3>🔄 Quick Replacement</h3>
+            <p>If any device faces an issue, we provide fast replacements without delays.</p>
+        </div>
+
+        <div style="background:var(--card-bg); padding:25px; border-radius:12px; box-shadow:var(--shadow);">
+            <h3>💼 B2B Focused</h3>
+            <p>Our rental services are tailor‑made for companies, offices, startups & IT teams.</p>
+        </div>
+
+        <div style="background:var(--card-bg); padding:25px; border-radius:12px; box-shadow:var(--shadow);">
+            <h3>💰 Cost Efficient</h3>
+            <p>No big investment needed—pay monthly and scale as your business grows.</p>
+        </div>
+
+        <div style="background:var(--card-bg); padding:25px; border-radius:12px; box-shadow:var(--shadow);">
+            <h3>🛠️ Fully Maintained</h3>
+            <p>We handle repairs, maintenance and support so you can focus on your business.</p>
+        </div>
+
+        <div style="background:var(--card-bg); padding:25px; border-radius:12px; box-shadow:var(--shadow);">
+            <h3>📞 Dedicated Support</h3>
+            <p>Get quick assistance any time through call or WhatsApp.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="pricing">
         <h2>Products & Pricing</h2>
-        <p>Choose from our high-performance laptops & desktop PCs. Ideal for offices, students, startups, and events.</p>
+        <p>Choose from our high‑performance laptops & desktop PCs. Ideal for offices, students, startups, and events.</p>
 
         <h3 style="margin-top:30px;">Laptop Configurations</h3>
         <div class="pricing-grid">
@@ -235,7 +307,11 @@
 
     <section id="story">
         <h2>Our Story</h2>
-        <p>Rent My Tech began with a mission to make quality technology affordable and accessible. Today, we proudly serve businesses, students, and organisations across Kolkata.</p>
+        <p>Rent My Tech was founded with a simple mission: make quality computing accessible and affordable for every business. We recognised that many organisations struggle with the high upfront costs of purchasing laptops and PCs, ongoing maintenance expenses, and the hassle of managing hardware. So we built a reliable, scalable rental service that helps companies avoid heavy investments while still getting top‑quality systems.</p>
+        
+        <p>Over the years, we have supported growing startups, remote teams, training institutions, corporate offices, and government projects by providing fast, flexible, and dependable devices on rent. From short‑term needs to long‑term contracts, we ensure that every business gets a smooth experience with timely delivery, quick replacements, and responsive support.</p>
+
+        <p>Our commitment to service excellence, transparent pricing, and customer satisfaction has made us the preferred tech rental partner for hundreds of businesses across Kolkata and West Bengal. Whether you are expanding your workforce, executing a temporary assignment, or setting up a new office, Rent My Tech is here to support your growth.</p>
     </section>
 
     <section id="contact">
@@ -250,4 +326,6 @@
             <h3>Contact Details</h3>
             <p><strong>Email:</strong> support@rentmytech.in</p>
             <p><strong>Phone:</strong> 6291 666 200</p>
-            <h3>Office Address</h
+            <h3>Office Address</h3>
+            <p>Hasina More, Dr. M.N.Ghosh Road Bye Lane,<br>Near New Kishan Soap Factory,<br>Raniganj, Paschim Bardhaman, 713347</p>
+            <!-- </h
