@@ -1,200 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rent My Tech | Laptop & PC Rental Solutions in Kolkata</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rent My Tech | Laptop & PC Rental</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <style>
         :root {
-            --dark-header: #2c3e50;
-            --primary-blue: #3498db;
-            --light-text: #ecf0f1;
-            --dark-text: #2c3e50;
-            --heading-bg: #e74c3c;
-            --background-end: #f4f6f9;
-            --card-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-            --price-accent: #2ecc71;
-            --secondary-color: #6c757d;
-            --texture-url: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><g fill='%23d6e9f9' fill-opacity='0.4'><path fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/></g></svg>");
+            --primary: #0062ff;
+            --primary-dark: #003c9e;
+            --accent: #00d47e;
+            --card-bg: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --section-bg: #f7f9fc;
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
             margin: 0;
-            padding: 0;
-            background-color: var(--background-end);
-            background-image: var(--texture-url);
-            color: var(--dark-text);
-            min-height: 100vh;
-            font-size: 0.95em;
-        }
-
-        .container {
-            width: 95%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-
-        section {
-            padding: 50px 40px;
-            margin: 40px auto;
-            background-color: rgba(255, 255, 255, 0.98);
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
-        }
-
-        h2 {
-            text-align: left !important;
-            margin-bottom: 25px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--section-bg);
+            color: var(--text-dark);
         }
 
         header {
-            background: var(--dark-header);
-            color: var(--light-text);
-            padding: 30px 0 10px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 45px 0 30px;
             text-align: center;
+            color: var(--text-light);
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            margin: 0 0 10px;
+            font-weight: 700;
         }
 
         nav {
-            background: #2c3e50;
-            text-align: center;
-            padding: 12px 0;
-            border-radius: 5px;
-            margin-top: 10px;
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        section {
+            width: 92%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 2rem;
+            color: var(--primary);
         }
 
         /* PRODUCT GRID */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
+            margin-top: 20px;
         }
 
         .pricing-card {
             background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-            transition: 0.3s;
-            border: 1px solid #ddd;
-        }
-
-        .card-header-highlight {
-            background-color: var(--heading-bg);
-            color: var(--light-text);
-            padding: 18px 20px;
-        }
-
-        .card-content {
+            border-radius: 14px;
             padding: 20px;
+            border: 1px solid #e5e5e5;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card h3 {
+            margin: 0 0 15px;
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .pricing-card p {
+            margin: 5px 0;
         }
 
         .price-box {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: var(--price-accent);
-            margin-top: 15px;
             text-align: right;
-            border-top: 1px dashed #ccc;
-            padding-top: 12px;
-        }
-
-        /* CONTACT SECTION */
-        .contact-shortcuts a {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 20px;
-            margin-right: 10px;
-            color: #fff;
+            margin-top: 15px;
+            font-size: 1.6rem;
             font-weight: bold;
-            border-radius: 6px;
-            text-decoration: none;
+            color: var(--accent);
         }
 
-        /* RESPONSIVE FOR MOBILE */
-        @media (max-width: 650px) {
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
+        /* CONTACT BUTTONS */
+        .contact-shortcuts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
+        .contact-shortcuts a {
+            display: flex;
+            align-items: center;
+            background: var(--primary);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .contact-shortcuts a:hover {
+            background: var(--primary-dark);
+        }
+
+        footer {
+            text-align: center;
+            margin: 30px 0;
+            padding: 15px 0;
+            color: #555;
+        }
+
+        @media (max-width: 650px) {
             section {
-                padding: 25px 20px;
+                padding: 25px;
+            }
+            header h1 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-
-<header>
-    <div class="container">
+    <header>
         <h1>Rent My Tech</h1>
-        <p>Your trusted partner for professional tech rental solutions.</p>
-    </div>
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#pricing">Products & Pricing</a>
-        <a href="#story">Our Story</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+        <p>Your trusted partner for laptop & PC rentals in Kolkata</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#story">Story</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-<section id="about" class="container">
-    <h2>About Rent My Tech</h2>
-    <p>Your trusted partner for professional tech rental solutions. We provide quality laptops and PCs to businesses across Kolkata with reliable service and competitive pricing.</p>
+    <section id="about">
+        <h2>About Rent My Tech</h2>
+        <p>We provide premium quality laptops and desktop PCs for rent across Kolkata with fast delivery, replacement support, and business-friendly pricing.</p>
+        <p><strong>Service Areas:</strong> Kolkata & nearby regions (Extended: West Bengal)</p>
+    </section>
 
-    <h3>Primary Service Area:</h3>
-    <p><strong>Kolkata and surrounding areas</strong></p>
-    <h3>Extended Service:</h3>
-    <p>West Bengal (with additional charges)</p>
-</section>
+    <section id="pricing">
+        <h2>Products & Pricing</h2>
+        <p>Choose from our high-performance laptops & desktop PCs. Ideal for offices, students, startups, and events.</p>
 
-<section id="pricing" class="container">
-    <h2>Products & Pricing</h2>
-    <p>We offer high-quality laptops and desktop PCs with configuration options to suit every business need. Our basic rent starts from ₹1000 per month.</p>
+        <h3 style="margin-top:30px;">Laptop Configurations</h3>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-laptop"></i> Intel i3 Laptop</h3>
+                <p><strong>RAM:</strong> 8 GB</p>
+                <p><strong>Storage:</strong> 256GB SSD</p>
+                <div class="price-box">₹1300 / month</div>
+            </div>
 
-    <h3 style="margin-top: 40px; margin-bottom: 20px;">Laptop Configurations:</h3>
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-laptop"></i> Intel i5 Laptop</h3>
+                <p><strong>RAM:</strong> 8 GB</p>
+                <p><strong>Storage:</strong> 256GB SSD</p>
+                <div class="price-box">₹1800 / month</div>
+            </div>
 
-    <div class="pricing-grid">
-        <!-- cards unchanged -->
-        <!-- You can paste original card content here, or ask me to auto-fill -->
-    </div>
-</section>
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-laptop"></i> Intel i5 (High Storage)</h3>
+                <p><strong>RAM:</strong> 8 GB</p>
+                <p><strong>Storage:</strong> 512GB SSD</p>
+                <div class="price-box">₹1900 / month</div>
+            </div>
 
-<section id="story" class="container">
-    <h2>Our Story</h2>
-    <p>Founded with a vision to make quality technology accessible to businesses of all sizes, Rent My Tech has become Kolkata's trusted partner for professional tech rental solutions.</p>
-    <p>We understand that businesses need reliable technology without the burden of large capital investments.</p>
-    <p>Our commitment to service excellence made us the preferred choice for companies across West Bengal.</p>
-</section>
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-laptop"></i> Intel i7 Laptop</h3>
+                <p><strong>RAM:</strong> 16 GB</p>
+                <p><strong>Storage:</strong> 512GB SSD</p>
+                <div class="price-box">₹2300 / month</div>
+            </div>
+        </div>
 
-<section id="contact" class="container">
-    <h2>Get In Touch</h2>
+        <h3 style="margin-top:40px;">Desktop PC Configurations</h3>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-desktop"></i> Intel i3 Desktop PC</h3>
+                <p><strong>RAM:</strong> 8 GB</p>
+                <p><strong>Storage:</strong> 256GB SSD</p>
+                <div class="price-box">₹1300 / month</div>
+            </div>
 
-    <div class="contact-shortcuts">
-        <a href="https://t.me/rentmytechin" target="_blank" style="background:#0088cc;">Telegram</a>
-        <a href="https://wa.me/916291666200" target="_blank" style="background:#25d366;">WhatsApp</a>
-        <a href="tel:+916291666200" style="background:#3498db;">Call Now</a>
-    </div>
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-desktop"></i> Intel i5 Desktop PC</h3>
+                <p><strong>RAM:</strong> 8 GB</p>
+                <p><strong>Storage:</strong> 256GB SSD</p>
+                <div class="price-box">₹1800 / month</div>
+            </div>
 
-    <div class="contact-details" style="margin-top:20px; background:#f4f6f9; padding:20px; border-left:5px solid var(--primary-blue); border-radius:8px;">
-        <h3>Contact Details:</h3>
-        <p><strong>Email:</strong> support@rentmytech.in</p>
-        <p><strong>Phone:</strong> 6291 666 200</p>
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-desktop"></i> Intel i5 High Storage</h3>
+                <p><strong>RAM:</strong> 8 GB</p>
+                <p><strong>Storage:</strong> 512GB SSD</p>
+                <div class="price-box">₹1900 / month</div>
+            </div>
 
-        <h3>Office Address:</h3>
-        <p>Hasina More, Dr. M.N.Ghosh Road Bye Lane,<br>Near New Kishan Soap Factory, Raniganj,<br>Paschim Bardhaman, 713347</p>
-    </div>
-</section>
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-desktop"></i> Intel i7 Desktop PC</h3>
+                <p><strong>RAM:</strong> 16 GB</p>
+                <p><strong>Storage:</strong> 512GB SSD</p>
+                <div class="price-box">₹2300 / month</div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <div class="container">
-        <p>&copy; 2025 Rent My Tech. All rights reserved.</p>
-    </div>
-</footer>
+    <section id="story">
+        <h2>Our Story</h2>
+        <p>Rent My Tech began with a mission to make quality technology affordable and accessible. Today, we proudly serve businesses, students, and organisations across Kolkata.</p>
+    </section>
 
-</body>
-</html>
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-shortcuts">
+            <a href="https://t.me/rentmytechin" target="_blank"><i class="fa-brands fa-telegram"></i>&nbsp; Telegram</a>
+            <a href="https://wa.me/916291666200" target="_blank"><i class="fa-brands fa-whatsapp"></i>&nbsp; WhatsApp</a>
+            <a href="tel:+916291666200"><i class="fa-solid fa-phone"></i>&nbsp; Call</a>
+        </div>
+
+        <div style="margin-top:25px; padding:20px; background:#eef4ff; border-left:5px solid var(--primary); border-radius:8px;">
+            <h3>Contact Details</h3>
+            <p><strong>Email:</strong> support@rentmytech.in</p>
+            <p><strong>Phone:</strong> 6291 666 200</p>
+            <h3>Office Address</h
