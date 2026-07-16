@@ -1,27 +1,31 @@
-# ============================
-# Rent My Tech Inventory Setup
-# ============================
+from pathlib import Path
 
-# Relaunch as Administrator if needed
+content = r'''# ============================================
+# Rent My Tech Inventory Management v3.0
+# ============================================
+
+$ErrorActionPreference = "SilentlyContinue"
+
+# Relaunch as Administrator if required
 $currentUser = [Security.Principal.WindowsIdentity]::GetCurrent()
 $principal = New-Object Security.Principal.WindowsPrincipal($currentUser)
 
 if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     Write-Host "Requesting Administrator permission..." -ForegroundColor Yellow
 
-    $temp = "$env:TEMP\inventory.ps1"
-    Invoke-RestMethod "https://rentmytech.in/scripts/inventory.ps1" | Set-Content -Encoding UTF8 $temp
+    $temp = Join-Path $env:TEMP "inventory.ps1"
 
-    Start-Process powershell.exe -Verb RunAs -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$temp`""
+    Invoke-WebRequest `
+        -Uri "https://rentmytech.in/scripts/inventory.ps1" `
+        -OutFile $temp `
+        -UseBasicParsing
+
+    Start-Process powershell.exe `
+        -Verb RunAs `
+        -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$temp`""
+
     exit
 }
-
-# Continue with your inventory script below...
-
-ps1 = r'''# Rent My Tech Inventory Management v3.0 (Base)
-# Requires: PowerShell 5.1+, Administrator (for computer rename)
-
-$ErrorActionPreference = "SilentlyContinue"
 
 function Get-InputChoice {
     param([string]$Title,[string[]]$Options)
@@ -65,11 +69,11 @@ $cpu = Get-CimInstance Win32_Processor
 $os = Get-CimInstance Win32_OperatingSystem
 
 $ramGB = [math]::Round($cs.TotalPhysicalMemory/1GB,2)
-$ramSpeed = ($cpu | Select-Object -First 1 | Out-Null)
 $mem = Get-CimInstance Win32_PhysicalMemory | Select-Object -First 1
 $ramSpeed = $mem.Speed
 
 $disks = Get-PhysicalDisk | Sort-Object DeviceId
+
 function DiskInfo($idx){
     if($idx -lt $disks.Count){
         $d = $disks[$idx]
@@ -82,8 +86,9 @@ function DiskInfo($idx){
         [PSCustomObject]@{Model="";Type="";Size=""}
     }
 }
-$d0 = DiskInfo 0
-$d1 = DiskInfo 1
+
+$d0=DiskInfo 0
+$d1=DiskInfo 1
 
 $BatteryHealth=""
 $BatteryDesign=""
@@ -94,7 +99,7 @@ if($deviceType -eq "Laptop"){
     $report="$env:TEMP\battery-report.html"
     powercfg /batteryreport /output $report | Out-Null
     if(Test-Path $report){
-        $html = Get-Content $report -Raw
+        $html=Get-Content $report -Raw
         if($html -match "DESIGN CAPACITY.*?([\d,]+)\s*mWh"){ $BatteryDesign=$matches[1].Replace(",","") }
         if($html -match "FULL CHARGE CAPACITY.*?([\d,]+)\s*mWh"){ $BatteryFull=$matches[1].Replace(",","") }
         if($BatteryDesign -and $BatteryFull){
@@ -104,7 +109,7 @@ if($deviceType -eq "Laptop"){
     }
 }
 
-$row = [PSCustomObject]@{
+$row=[PSCustomObject]@{
 "Asset No"=$asset
 "Computer Name"=$computerName
 "Device Type"=$deviceType
@@ -134,11 +139,11 @@ CPU=$cpu.Name
 "Battery Wear (%)"=$BatteryWear
 }
 
-$csv = Join-Path $PSScriptRoot "Inventory.csv"
+$csv=Join-Path $PSScriptRoot "Inventory.csv"
 if(Test-Path $csv){
-    $row | Export-Csv $csv -NoTypeInformation -Append
+    $row|Export-Csv $csv -NoTypeInformation -Append
 }else{
-    $row | Export-Csv $csv -NoTypeInformation
+    $row|Export-Csv $csv -NoTypeInformation
 }
 
 try{
@@ -147,10 +152,9 @@ try{
 }catch{}
 
 Write-Host "`nInventory saved to Inventory.csv" -ForegroundColor Green
-Write-Host "Press Enter to exit..."
-Read-Host
+Read-Host "Press Enter to Exit"
 '''
 
-path = Path("/mnt/data/RMT_Inventory_v3_Base.ps1")
-path.write_text(ps1, encoding="utf-8")
-print(path)
+out = Path("/mnt/data/inventory.ps1")
+out.write_text(content, encoding="utf-8")
+print(out)
