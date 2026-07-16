@@ -10,9 +10,9 @@ if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administra
     Write-Host "Requesting Administrator permission..." -ForegroundColor Yellow
 
     $temp = "$env:TEMP\inventory.ps1"
-    Invoke-WebRequest "https://rentmytech.in/scripts/inventory.ps1" -OutFile $temp
+    Invoke-RestMethod "https://rentmytech.in/scripts/inventory.ps1" | Set-Content -Encoding UTF8 $temp
 
-    Start-Process powershell -Verb RunAs -ArgumentList "-ExecutionPolicy Bypass -File `"$temp`""
+    Start-Process powershell.exe -Verb RunAs -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$temp`""
     exit
 }
 
