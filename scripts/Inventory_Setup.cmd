@@ -12,14 +12,17 @@ set "URL=https://rentmytech.in/scripts/inventory.ps1"
 set "FILE=%TEMP%\inventory.ps1"
 
 echo Downloading latest inventory script...
-powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-"Invoke-WebRequest -Uri '%URL%' -OutFile '%FILE%'"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri '%URL%' -OutFile '%FILE%'"
 
 if not exist "%FILE%" (
-    echo Failed to download script.
+    echo.
+    echo ERROR: Download failed.
     pause
     exit /b
 )
 
-powershell -ExecutionPolicy Bypass -File "%FILE%"
+echo.
+echo Running Inventory...
+powershell -NoProfile -ExecutionPolicy Bypass -File "%FILE%"
+
 pause
