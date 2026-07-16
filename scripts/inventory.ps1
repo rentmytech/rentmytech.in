@@ -1,4 +1,22 @@
-from pathlib import Path
+# ============================
+# Rent My Tech Inventory Setup
+# ============================
+
+# Relaunch as Administrator if needed
+$currentUser = [Security.Principal.WindowsIdentity]::GetCurrent()
+$principal = New-Object Security.Principal.WindowsPrincipal($currentUser)
+
+if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    Write-Host "Requesting Administrator permission..." -ForegroundColor Yellow
+
+    $temp = "$env:TEMP\inventory.ps1"
+    Invoke-WebRequest "https://rentmytech.in/scripts/inventory.ps1" -OutFile $temp
+
+    Start-Process powershell -Verb RunAs -ArgumentList "-ExecutionPolicy Bypass -File `"$temp`""
+    exit
+}
+
+# Continue with your inventory script below...
 
 ps1 = r'''# Rent My Tech Inventory Management v3.0 (Base)
 # Requires: PowerShell 5.1+, Administrator (for computer rename)
