@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rent My Tech provides laptop and desktop PC rentals for businesses, offices, events, training centres and projects in Kolkata and surrounding areas.">
+<title>Rent My Tech | Laptop & PC Rentals in Kolkata</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#0062ff;
+    --primary-dark:#003c9e;
+    --accent:#25d366;
+    --text:#172033;
+    --muted:#5f6b7a;
+    --bg:#f5f8fc;
+    --card:#ffffff;
+    --border:#e5ebf3;
+    --shadow:0 8px 25px rgba(17,39,75,.09);
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+    margin:0;
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+}
+
+header{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg,#0062ff,#003c9e);
+    color:#fff;
+    padding:26px 20px 22px;
+    text-align:center;
+    box-shadow:0 6px 24px rgba(0,48,130,.20);
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    position:relative;
+}
+
+.site-logo{
+    position:absolute;
+    left:0;
+    top:50%;
+    transform:translateY(-50%);
+    width:82px;
+    height:82px;
+    object-fit:contain;
+    padding:6px;
+    border-radius:14px;
+    background:#fff;
+    box-shadow:0 5px 18px rgba(0,0,0,.18);
+}
+
+.brand-title{
+    margin:0;
+    font-size:clamp(2.1rem,5vw,3.2rem);
+    line-height:1.05;
+    font-weight:900;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.tagline{
+    margin:8px 0 0;
+    font-size:1rem;
+    opacity:.95;
+}
+
+nav{
+    margin-top:18px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    padding:7px 12px;
+    border-radius:7px;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.hero{
+    width:92%;
+    max-width:1200px;
+    margin:28px auto 0;
+    padding:38px 30px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#eef5ff,#fff);
+    border:1px solid #dce9ff;
+    box-shadow:var(--shadow);
+    text-align:center;
+}
+
+.hero h2{
+    margin:0;
+    color:var(--primary-dark);
+    font-size:clamp(1.8rem,4vw,2.7rem);
+}
+
+.hero p{
+    max-width:720px;
+    margin:10px auto 20px;
+    color:var(--muted);
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    min-height:44px;
+    padding:11px 20px;
+    border-radius:9px;
+    text-decoration:none;
+    font-weight:800;
+    border:none;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:#fff;
+}
+
+.btn-primary:hover{background:var(--primary-dark)}
+
+.btn-whatsapp{
+    background:var(--accent);
+    color:#fff;
+}
+
+.btn-whatsapp:hover{filter:brightness(.94)}
+
+.trust-row{
+    max-width:900px;
+    margin:20px auto 0;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.trust-pill{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:7px 13px;
+    font-size:.88rem;
+    color:#344054;
+}
+
+section{
+    width:92%;
+    max-width:1200px;
+    margin:30px auto;
+    padding:34px;
+    background:var(--card);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+}
+
+h2{
+    margin:0 0 10px;
+    font-size:clamp(1.55rem,3vw,2rem);
+    color:var(--primary);
+    font-weight:850;
+}
+
+.section-intro{
+    margin-top:0;
+    color:var(--muted);
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin-top:22px;
+}
+
+.feature-card{
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:13px;
+    background:#fff;
+    box-shadow:0 5px 18px rgba(17,39,75,.06);
+}
+
+.feature-card h3{
+    margin:0 0 7px;
+    font-size:1.08rem;
+}
+
+.feature-card p{
+    margin:0;
+    color:var(--muted);
+    font-size:.94rem;
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:18px;
+    margin-top:18px;
+}
+
+.pricing-card{
+    display:flex;
+    flex-direction:column;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:20px;
+    box-shadow:0 6px 20px rgba(17,39,75,.07);
+    transition:transform .18s ease,box-shadow .18s ease;
+}
+
+.pricing-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(17,39,75,.12);
+}
+
+.pricing-card h3{
+    margin:0 0 13px;
+    color:var(--primary-dark);
+    font-size:1.15rem;
+}
+
+.spec{
+    margin:4px 0;
+    color:#465365;
+    font-size:.94rem;
+}
+
+.price-box{
+    margin-top:auto;
+    padding-top:16px;
+    color:#159447;
+    font-size:1.4rem;
+    font-weight:850;
+}
+
+.price-note{
+    margin:5px 0 12px;
+    color:#7a8492;
+    font-size:.78rem;
+}
+
+.rent-btn{
+    width:100%;
+    padding:10px;
+    background:var(--primary);
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.rent-btn:hover{background:var(--primary-dark)}
+
+.included-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+    margin-top:20px;
+}
+
+.included-card{
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:13px;
+    background:#fff;
+}
+
+.included-card h3{margin-top:0}
+
+.included-card ul{
+    margin-bottom:0;
+    padding-left:20px;
+}
+
+.how-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:14px;
+    margin-top:20px;
+}
+
+.step{
+    text-align:center;
+    padding:18px 12px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:#fbfdff;
+}
+
+.step-number{
+    width:36px;
+    height:36px;
+    margin:0 auto 8px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:var(--primary);
+    color:#fff;
+    font-weight:800;
+}
+
+.step h3{
+    margin:0 0 4px;
+    font-size:1rem;
+}
+
+.step p{
+    margin:0;
+    color:var(--muted);
+    font-size:.86rem;
+}
+
+.story-text p:last-child{margin-bottom:0}
+
+.contact-section{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    align-items:stretch;
+}
+
+.contact-left,.quick-form{
+    flex:1;
+    min-width:280px;
+}
+
+.contact-shortcuts{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin:18px 0 24px;
+}
+
+.contact-shortcuts a{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:10px 15px;
+    color:#fff;
+    font-weight:750;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+.telegram{background:#0088cc}
+.whatsapp{background:#25d366}
+.call{background:#3498db}
+
+.contact-shortcuts a:hover{filter:brightness(.94)}
+
+.quick-form{
+    background:#17202d;
+    padding:24px;
+    border-radius:16px;
+    box-shadow:0 10px 28px rgba(0,0,0,.18);
+    color:#fff;
+}
+
+.quick-form h3{
+    margin-top:0;
+    color:#67dfff;
+}
+
+.quick-form input,
+.quick-form select{
+    width:100%;
+    padding:11px 12px;
+    margin-bottom:10px;
+    border:1px solid #d9e0ea;
+    border-radius:8px;
+    font-size:15px;
+    outline:none;
+}
+
+.quick-form input:focus,
+.quick-form select:focus{
+    border-color:#4b9cff;
+    box-shadow:0 0 0 3px rgba(75,156,255,.16);
+}
+
+.quick-form button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:9px;
+    background:#25d366;
+    color:#fff;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.quick-form button:hover{filter:brightness(.94)}
+
+.enquiry-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:2px;
+}
+
+.email-btn,
+.whatsapp-btn{
+    width:100%;
+    padding:12px 10px;
+    border:none;
+    border-radius:9px;
+    color:#fff;
+    font-weight:800;
+    cursor:pointer;
+    transition:filter .15s ease, transform .15s ease;
+}
+
+.email-btn{background:#0062ff}
+.whatsapp-btn{background:#25d366}
+
+.email-btn:hover,
+.whatsapp-btn:hover{
+    filter:brightness(.94);
+    transform:translateY(-1px);
+}
+
+@media(max-width:430px){
+    .enquiry-actions{grid-template-columns:1fr}
+}
+
+
+.form-note{
+    margin:10px 0 0;
+    color:#b9c4d1;
+    font-size:.78rem;
+}
+
+.toggle-area{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.toggle-btn{
+    padding:11px 16px;
+    border:none;
+    border-radius:9px;
+    background:var(--primary);
+    color:#fff;
+    font-weight:750;
+    cursor:pointer;
+}
+
+.toggle-btn.secondary{background:var(--primary-dark)}
+
+.policy-box{
+    display:none;
+    margin-top:18px;
+    padding:22px;
+    background:#fbfcfe;
+    border:1px solid var(--border);
+    border-radius:13px;
+}
+
+.policy-box h2{font-size:1.45rem}
+
+.policy-box ul{
+    line-height:1.75;
+    padding-left:22px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#657080;
+    font-size:.9rem;
+}
+
+@media(max-width:768px){
+    header{padding:18px 15px 18px}
+
+    .header-inner{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .site-logo{
+        position:static;
+        transform:none;
+        width:62px;
+        height:62px;
+        margin-bottom:9px;
+    }
+
+    .brand-title{font-size:2.05rem}
+
+    .tagline{
+        font-size:.9rem;
+        line-height:1.4;
+    }
+
+    nav{margin-top:12px}
+
+    nav a{
+        font-size:.88rem;
+        padding:6px 9px;
+        margin:0;
+    }
+
+    .hero{
+        padding:28px 20px;
+        margin-top:20px;
+    }
+
+    section{
+        width:94%;
+        padding:24px 20px;
+        margin:22px auto;
+    }
+
+    .pricing-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:12px;
+    }
+
+    .pricing-card{
+        padding:14px;
+    }
+
+    .pricing-card h3{
+        font-size:1rem;
+    }
+
+    .spec{
+        font-size:.82rem;
+    }
+
+    .price-box{
+        font-size:1.15rem;
+    }
+
+    .price-note{
+        font-size:.72rem;
+    }
+}
+
+@media(max-width:430px){
+    .pricing-grid{grid-template-columns:1fr}
+
+    .hero-buttons .btn{
+        width:100%;
+    }
+
+    .trust-pill{font-size:.8rem}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+        <img src="logo.png" alt="Rent My Tech Logo" class="site-logo">
+
+        <h1 class="brand-title">Rent My Tech</h1>
+        <p class="tagline">Laptop &amp; PC rentals for businesses in Kolkata</p>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#pricing">Rentals</a>
+            <a href="#why-us">Why Us</a>
+            <a href="#contact">Contact</a>
+    <a href="#final-section">Terms & Enquiry</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <div class="hero">
+        <h2>Laptop &amp; PC Rentals in Kolkata</h2>
+        <p>
+            Reliable laptops and desktop PCs available for monthly rental.
+            Ideal for offices, startups, training centres, events and short-term business requirements.
+        </p>
+
+        <div class="hero-buttons">
+            <a class="btn btn-primary" href="#pricing">
+                <i class="fa-solid fa-laptop"></i> Browse Rentals
+            </a>
+            <a class="btn btn-whatsapp" href="#final-section">
+                <i class="fa-solid fa-file-lines"></i> Terms &amp; Enquiry
+            </a>
+        </div>
+
+        <div class="trust-row">
+            <span class="trust-pill">✓ 12-Month Minimum</span>
+            <span class="trust-pill">✓ B2B Focused</span>
+            <span class="trust-pill">✓ Bulk Requirements</span>
+            <span class="trust-pill">✓ Support Available</span>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2>About Rent My Tech</h2>
+        <p class="section-intro">
+            Rent My Tech is a B2B technology rental service providing laptops and desktop PCs
+            for businesses and organisations in Kolkata and surrounding areas.
+        </p>
+        <p>
+            Whether you need systems for new employees, short-term projects, internships,
+            audits, training programs or larger deployments, we provide dependable machines
+            with flexible rental arrangements, support and replacement assistance.
+        </p>
+        <p>
+            <strong>Service Areas:</strong> Kolkata and surrounding regions.
+            Extended rental options are available across West Bengal.
+        </p>
+    </section>
+
+    <section id="why-us">
+        <h2>Why Choose Us</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>⚡ Fast Delivery</h3>
+                <p>Quick deployment of laptops and PCs across Kolkata.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔄 Quick Replacement</h3>
+                <p>Fast replacement support if a rented device develops an issue.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>💼 B2B Focused</h3>
+                <p>Rental solutions designed around business requirements.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>💰 Cost Efficient</h3>
+                <p>Avoid large hardware purchases and pay through rental arrangements.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🛠️ Fully Maintained</h3>
+                <p>Repair, maintenance and support are handled as applicable.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📞 Dedicated Support</h3>
+                <p>Get assistance through call or WhatsApp when you need it.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2>Laptops &amp; Desktop PCs for Rent</h2>
+        <p class="section-intro">
+            Choose a configuration based on your requirement. Prices shown are monthly rental rates for long-term B2B rentals.
+        </p>
+
+        <h3 style="margin-top:28px;">💻 Laptops for Rent</h3>
+
+        <div class="pricing-grid">
+
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-laptop"></i> Intel i3 Laptop</h3>
+                <p class="spec"><strong>RAM:</strong> 8 GB</p>
+                <p class="spec"><strong>Storage:</strong> 256GB SSD</p>
+                <div class="price-box">₹1,300 / month</div>
+                <p class="price-note">GST and applicable charges as per billing.</p>
+                <button class="rent-btn" onclick="rentNow('Intel i3 Laptop', '8 GB RAM, 256GB SSD')">Rent This Laptop</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-laptop"></i> Intel i5 Laptop</h3>
+                <p class="spec"><strong>RAM:</strong> 8 GB</p>
+                <p class="spec"><strong>Storage:</strong> 256GB SSD</p>
+                <div class="price-box">₹1,800 / month</div>
+                <p class="price-note">GST and applicable charges as per billing.</p>
+                <button class="rent-btn" onclick="rentNow('Intel i5 Laptop', '8 GB RAM, 256GB SSD')">Rent This Laptop</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-laptop"></i> Intel i5 Laptop</h3>
+                <p class="spec"><strong>RAM:</strong> 8 GB</p>
+                <p class="spec"><strong>Storage:</strong> 512GB SSD</p>
+                <div class="price-box">₹1,900 / month</div>
+                <p class="price-note">GST and applicable charges as per billing.</p>
+                <button class="rent-btn" onclick="rentNow('Intel i5 Laptop', '8 GB RAM, 512GB SSD')">Rent This Laptop</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-laptop"></i> Intel i7 Laptop</h3>
+                <p class="spec"><strong>RAM:</strong> 16 GB</p>
+                <p class="spec"><strong>Storage:</strong> 512GB SSD</p>
+                <div class="price-box">₹2,300 / month</div>
+                <p class="price-note">GST and applicable charges as per billing.</p>
+                <button class="rent-btn" onclick="rentNow('Intel i7 Laptop', '16 GB RAM, 512GB SSD')">Rent This Laptop</button>
+            </div>
+
+        </div>
+
+        <h3 style="margin-top:36px;">🖥️ Desktop PCs for Rent</h3>
+
+        <div class="pricing-grid">
+
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-desktop"></i> Intel i3 Desktop PC</h3>
+                <p class="spec"><strong>RAM:</strong> 8 GB</p>
+                <p class="spec"><strong>Storage:</strong> 256GB SSD</p>
+                <div class="price-box">₹1,300 / month</div>
+                <p class="price-note">GST and applicable charges as per billing.</p>
+                <button class="rent-btn" onclick="rentNow('Intel i3 Desktop PC', '8 GB RAM, 256GB SSD')">Rent This PC</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-desktop"></i> Intel i5 Desktop PC</h3>
+                <p class="spec"><strong>RAM:</strong> 8 GB</p>
+                <p class="spec"><strong>Storage:</strong> 256GB SSD</p>
+                <div class="price-box">₹1,800 / month</div>
+                <p class="price-note">GST and applicable charges as per billing.</p>
+                <button class="rent-btn" onclick="rentNow('Intel i5 Desktop PC', '8 GB RAM, 256GB SSD')">Rent This PC</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-desktop"></i> Intel i5 Desktop PC</h3>
+                <p class="spec"><strong>RAM:</strong> 8 GB</p>
+                <p class="spec"><strong>Storage:</strong> 512GB SSD</p>
+                <div class="price-box">₹1,900 / month</div>
+                <p class="price-note">GST and applicable charges as per billing.</p>
+                <button class="rent-btn" onclick="rentNow('Intel i5 Desktop PC', '8 GB RAM, 512GB SSD')">Rent This PC</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3><i class="fa-solid fa-desktop"></i> Intel i7 Desktop PC</h3>
+                <p class="spec"><strong>RAM:</strong> 16 GB</p>
+                <p class="spec"><strong>Storage:</strong> 512GB SSD</p>
+                <div class="price-box">₹2,300 / month</div>
+                <p class="price-note">GST and applicable charges as per billing.</p>
+                <button class="rent-btn" onclick="rentNow('Intel i7 Desktop PC', '16 GB RAM, 512GB SSD')">Rent This PC</button>
+            </div>
+
+        </div>
+
+        <p style="margin:22px 0 0;color:#667085;font-size:.9rem;">
+            <strong>Rental period:</strong> Minimum rental period is 12 months.
+            Contact us for longer rental requirements, custom terms and bulk quantities.
+        </p>
+    </section>
+
+    <section id="in-box">
+        <h2>What's Included With Your Rental</h2>
+
+        <div class="included-grid">
+            <div class="included-card">
+                <h3>🖥️ Desktop Rental Package</h3>
+                <ul>
+                    <li>CPU + Keyboard + Mouse + Monitor</li>
+                    <li>HDMI / VGA Cable</li>
+                    <li>CPU Power Cable + Monitor Cable</li>
+                    <li>Windows 11 Home / Pro Installed</li>
+                </ul>
+            </div>
+
+            <div class="included-card">
+                <h3>💻 Laptop Rental Package</h3>
+                <ul>
+                    <li>Laptop with Power Adapter</li>
+                    <li>Windows 11 Home / Pro Installed</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <h2>How Rental Works</h2>
+
+        <div class="how-grid">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Choose</h3>
+                <p>Select your laptop or desktop configuration.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Enquire</h3>
+                <p>Share your quantity, duration and requirement.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Confirm</h3>
+                <p>Receive availability, pricing and rental details.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Receive</h3>
+                <p>Collect or arrange delivery as applicable.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">5</div>
+                <h3>Return</h3>
+                <p>Return the equipment or discuss an extension.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="story-text">
+        <h2>Our Story</h2>
+        <p>
+            Rent My Tech was founded with a simple mission: make quality computing
+            accessible and affordable for businesses without the heavy upfront cost
+            of purchasing hardware.
+        </p>
+        <p>
+            We support startups, remote teams, training institutions, corporate offices
+            and project-based requirements with laptops and desktop PCs on rent.
+            From short-term requirements to longer rental arrangements, our focus is
+            reliable equipment, responsive support and a straightforward rental experience.
+        </p>
+    </section>
+
+    <section id="contact" class="contact-section">
+
+        <div class="contact-left">
+            <h2>Get in Touch</h2>
+            <p class="section-intro">Tell us what you need and we'll help you with availability and rental pricing.</p>
+
+            <div class="contact-shortcuts">
+                <a href="https://t.me/rentmytechin" class="telegram" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-telegram"></i> Telegram
+                </a>
+
+                <a href="https://wa.me/916291666200" class="whatsapp" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+
+                <a href="tel:+916291666200" class="call">
+                    <i class="fa-solid fa-phone"></i> Call
+                </a>
+            </div>
+
+            <h3>Contact Details</h3>
+            <p><b>Email:</b> support@rentmytech.in</p>
+            <p><b>Phone:</b> 6291 666 200</p>
+
+            <h3>Office Address</h3>
+            <p>
+                Hasina More, Dr. M.N. Ghosh Road Bye Lane, Near New Kishan Soap Factory,
+                Raniganj, Paschim Bardhaman – 713347
+            </p>
+        </div>
+
+        <div class="quick-form">
+            <h3>Rental Enquiry</h3>
+
+            <form id="rentalEnquiryForm" onsubmit="return false;">
+                <input type="hidden" name="access_key" value="a4a0f831-d23c-41a0-9ffd-276e1c0fd6b9">
+                <input type="hidden" name="subject" value="New Rent My Tech Rental Enquiry">
+                <input type="checkbox" name="botcheck" style="display:none;">
+
+                <input id="qName" name="name" type="text" placeholder="Your Name" autocomplete="name" required>
+
+                <input id="qCompany" name="company" type="text" placeholder="Company Name" autocomplete="organization" required>
+
+                <input id="qEmail" name="email" type="email" placeholder="Email Address" autocomplete="email" required>
+
+                <select id="qProduct" name="requirement" required>
+                    <option value="">What do you need?</option>
+                    <option>Intel i3 Laptop</option>
+                    <option>Intel i5 Laptop - 256GB</option>
+                    <option>Intel i5 Laptop - 512GB</option>
+                    <option>Intel i7 Laptop</option>
+                    <option>Intel i3 Desktop PC</option>
+                    <option>Intel i5 Desktop PC - 256GB</option>
+                    <option>Intel i5 Desktop PC - 512GB</option>
+                    <option>Intel i7 Desktop PC</option>
+                    <option>Multiple / Bulk Requirement</option>
+                </select>
+
+                <input id="qQty" name="quantity" type="number" min="1" placeholder="Quantity" required>
+
+                <select id="qDuration" name="rental_duration" required>
+                    <option value="">Rental Duration</option>
+                    <option>12 Months</option>
+                    <option>24 Months</option>
+                    <option>Longer Term</option>
+                    <option>Custom Requirement</option>
+                </select>
+
+                <input id="qLocation" name="delivery_location" type="text" placeholder="Delivery Location" autocomplete="street-address" required>
+
+                <input id="qMsg" name="additional_requirement" type="text" placeholder="Additional Requirement (Optional)">
+
+                <div class="enquiry-actions">
+                    <button type="button" class="email-btn" onclick="sendRentalEmail()">
+                        <i class="fa-solid fa-envelope"></i> Send via Email
+                    </button>
+
+                    <button type="button" class="whatsapp-btn" onclick="sendRentalWhatsApp()">
+                        <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp
+                    </button>
+                </div>
+
+                <p class="form-note">
+                    Choose either option. The same enquiry details will be sent by WhatsApp or email.
+                </p>
+            </form>
+        </div>
+
+    </section>
+
+    <section id="final-section" id="policies">
+        <div class="toggle-area">
+            <button id="termsToggle" class="toggle-btn">📜 View Terms &amp; Conditions</button>
+            <button id="gstToggle" class="toggle-btn secondary">🧾 View GST Terms</button>
+            <button class="toggle-btn" style="background:#444" onclick="openRentForm()">📄 Custom Rental Inquiry</button>
+        </div>
+
+        <div id="termsContent" class="policy-box">
+            <h2>Rent My Tech – Terms &amp; Conditions</h2>
+            <p>By using our services and renting any product from Rent My Tech, you agree to the following Terms &amp; Conditions:</p>
+
+            <ul>
+                <li><strong>Minimum Rental Period:</strong> The minimum rental period is 1 month for all products. Rentals for less than one month are not allowed.</li>
+
+                <li><strong>Advance Payment &amp; Security Deposit:</strong>
+                    <ul>
+                        <li>For 12-month rental: 2 months advance rent + 2 months security deposit is required before delivery/collection.</li>
+                        <li>For 12-month and longer rentals: payment terms and security deposit will be confirmed in the rental quotation/agreement.</li>
+                        <li>The security deposit is refundable after product return and successful inspection.</li>
+                    </ul>
+                </li>
+
+                <li><strong>Damage, Loss &amp; Replacement:</strong> If any physical or internal damage, misuse, tampering, or missing accessories are found, the customer must bear the full repair or replacement cost including transportation and service charges.</li>
+
+                <li><strong>Pricing &amp; GST:</strong> All prices listed on our website are base prices. GST will be added as per Government rules during billing.</li>
+
+                <li><strong>Product Collection &amp; Delivery:</strong> Products must be collected from our Kolkata office. If delivery is requested, delivery charges may apply depending on location and order size. In some cases, free delivery may be offered at our discretion.</li>
+
+                <li><strong>Illegal Use &amp; Legal Responsibility:</strong> The rented device must not be used for any illegal activities. If we receive any legal notice or complaint related to the usage, the customer using the device at that time will be fully responsible. Rent My Tech will not be liable in such cases.</li>
+
+                <li><strong>Ownership of Products:</strong> All rental products remain the property of Rent My Tech. Ownership does not transfer to the customer at any time.</li>
+
+                <li><strong>No Transfer Policy:</strong> The rented product cannot be transferred, sub-rented, or handed over to a third party without written approval from Rent My Tech.</li>
+
+                <li><strong>Late Payment Policy:</strong> Late rental payments may result in service suspension, penalty charges, product recovery, or forfeiture of security deposit.</li>
+
+                <li><strong>Data Responsibility:</strong> The customer is fully responsible for their data. Rent My Tech is not responsible for any loss of data during usage, service, or replacement.</li>
+
+                <li><strong>Software Licensing:</strong> All software is provided for business use only. Any misuse, piracy, or illegal installation by the customer is strictly prohibited and will attract legal action.</li>
+
+                <li><strong>Early Termination:</strong> If the customer terminates the rental before the agreed minimum period of 12 months, advance rent shall not be refundable.</li>
+
+                <li><strong>Upgrades / Downgrades:</strong> Hardware upgrades or downgrades during the rental period are subject to availability and revised pricing.</li>
+
+                <li><strong>Force Majeure:</strong> Rent My Tech shall not be liable for failure to perform obligations due to events beyond reasonable control (natural disasters, government actions, network failures, etc.).</li>
+
+                <li><strong>Jurisdiction:</strong> All disputes shall be subject to the jurisdiction of courts in West Bengal, India.</li>
+
+                <li><strong>Company Rights:</strong> Rent My Tech reserves the right to update or modify these Terms &amp; Conditions at any time without prior notice. All decisions taken by Rent My Tech shall be final and binding.</li>
+            </ul>
+        </div>
+
+        <div id="gstContent" class="policy-box">
+            <h2>GST &amp; Taxation Policy</h2>
+            <ul>
+                <li>All rental prices displayed on the website are <strong>exclusive of GST</strong>, unless clearly mentioned otherwise.</li>
+                <li><strong>GST will be charged as per prevailing Government of India rules</strong> at the time of billing.</li>
+                <li>A <strong>valid GST Invoice</strong> will be issued for every applicable transaction.</li>
+                <li>Customers who wish to claim <strong>Input Tax Credit (ITC)</strong> must provide a <strong>valid GSTIN</strong> and correct billing details at the time of order.</li>
+                <li>Any <strong>GST rate change by the Government</strong> will be applicable immediately without prior notice.</li>
+                <li>Rent My Tech shall <strong>not be responsible for denial of ITC</strong> due to incorrect GST details, delayed filing, or non-compliance by the customer.</li>
+                <li>In case of <strong>GST-exempt billing (if applicable)</strong>, the same will be clearly mentioned on the invoice.</li>
+                <li>All other <strong>statutory taxes, duties, and government levies</strong> shall be charged as applicable at the time of invoicing.</li>
+            </ul>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Rent My Tech. Laptop &amp; PC Rental Services.
+</footer>
+
+<!-- Custom Rental Google Form Modal -->
+<div id="rentModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);justify-content:center;align-items:center;padding:15px;z-index:99999;">
+    <div style="background:#fff;width:100%;max-width:700px;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35);">
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdXqXWHRZS2H9_AtsZ65xuwaJeD9D4EEnTlge14LhlOiobjjw/viewform?embedded=true"
+            width="100%"
+            height="75vh"
+            frameborder="0"
+            style="display:block;background:#fff;border:0;">
+        </iframe>
+
+        <button onclick="closeRentForm()" style="width:100%;padding:14px;background:#444;color:#fff;border:0;font-weight:800;cursor:pointer;">
+            Close
+        </button>
+    </div>
+</div>
+
+<script>
+function rentNow(model, specs){
+    const message =
+`Hello Rent My Tech Team,
+
+I am interested in renting:
+Device: ${model}
+Configuration: ${specs}
+
+Please share availability, rental terms and the best quotation.
+
+Thank you.`;
+
+    const phone = "916291666200";
+    const url = "https://api.whatsapp.com/send?phone=" + phone + "&text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+}
+
+const WEB3FORMS_ACCESS_KEY = "a4a0f831-d23c-41a0-9ffd-276e1c0fd6b9";
+const RENTAL_EMAIL = "support@rentmytech.in";
+
+function getRentalData(){
+    const name = document.getElementById("qName").value.trim();
+    const company = document.getElementById("qCompany").value.trim();
+    const email = document.getElementById("qEmail").value.trim();
+    const product = document.getElementById("qProduct").value;
+    const qty = document.getElementById("qQty").value.trim();
+    const duration = document.getElementById("qDuration").value;
+    const location = document.getElementById("qLocation").value.trim();
+    const msg = document.getElementById("qMsg").value.trim();
+
+    if(!name || !company || !email || !product || !qty || !duration || !location){
+        alert("Please fill in all required fields.");
+        return null;
+    }
+
+    return {name, company, email, product, qty, duration, location, msg};
+}
+
+function buildRentalMessage(data){
+    return `Hello Rent My Tech Team,
+
+I would like to inquire about laptop/PC rental.
+
+Name: ${data.name}
+Company: ${data.company}
+Email: ${data.email}
+Requirement: ${data.product}
+Quantity: ${data.qty}
+Rental Duration: ${data.duration}
+Delivery Location: ${data.location}
+Additional Requirement: ${data.msg || "None"}
+
+Please share availability, quotation and rental terms.
+
+Thank you.`;
+}
+
+function sendRentalWhatsApp(){
+    const data = getRentalData();
+    if(!data) return;
+
+    const text = buildRentalMessage(data);
+    const url = "https://api.whatsapp.com/send?phone=916291666200&text=" + encodeURIComponent(text);
+    window.open(url, "_blank");
+}
+
+async function sendRentalEmail(){
+    const data = getRentalData();
+    if(!data) return;
+
+    const button = document.querySelector(".email-btn");
+    const originalText = button.innerHTML;
+
+    const payload = {
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: `New Rental Enquiry - ${data.company} - ${data.product} - ${data.duration}`,
+        from_name: "Rent My Tech Website",
+        name: data.name,
+        company: data.company,
+        email: data.email,
+        requirement: data.product,
+        quantity: data.qty,
+        rental_duration: data.duration,
+        delivery_location: data.location,
+        additional_requirement: data.msg || "None",
+        botcheck: ""
+    };
+
+    button.disabled = true;
+    button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+    try{
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if(response.ok && result.success){
+            alert("Thank you! Your rental enquiry has been sent successfully to Rent My Tech.");
+            document.getElementById("rentalEnquiryForm").reset();
+        }else{
+            console.error("Web3Forms error:", result);
+            alert("We could not send the email right now. Please try WhatsApp or call us.");
+        }
+    }catch(error){
+        console.error("Email submission error:", error);
+        alert("Unable to send the enquiry right now. Please try WhatsApp or call us.");
+    }finally{
+        button.disabled = false;
+        button.innerHTML = originalText;
+    }
+}
+
+function openRentForm(){
+    document.getElementById("rentModal").style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function closeRentForm(){
+    document.getElementById("rentModal").style.display = "none";
+    document.body.style.overflow = "";
+}
+
+document.getElementById("rentModal").addEventListener("click", function(e){
+    if(e.target === this) closeRentForm();
+});
+
+const termsBtn = document.getElementById("termsToggle");
+const termsBox = document.getElementById("termsContent");
+const gstBtn = document.getElementById("gstToggle");
+const gstBox = document.getElementById("gstContent");
+
+function closePolicies(){
+    termsBox.style.display = "none";
+    gstBox.style.display = "none";
+    termsBtn.textContent = "📜 View Terms & Conditions";
+    gstBtn.textContent = "🧾 View GST Terms";
+}
+
+termsBtn.addEventListener("click", function(){
+    const open = termsBox.style.display === "block";
+    closePolicies();
+
+    if(!open){
+        termsBox.style.display = "block";
+        termsBtn.textContent = "❌ Hide Terms & Conditions";
+    }
+});
+
+gstBtn.addEventListener("click", function(){
+    const open = gstBox.style.display === "block";
+    closePolicies();
+
+    if(!open){
+        gstBox.style.display = "block";
+        gstBtn.textContent = "❌ Hide GST Terms";
+    }
+});
+</script>
+
+</body>
+</html>
